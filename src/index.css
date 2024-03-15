@@ -72,3 +72,10 @@ button:focus-visible {
   border: 1px solid; 
   color: #1a1a1a;
 }
+
+.draggable-words{
+  border: 1px solid; 
+  color: #1a1a1a;
+  padding: 0.6em 1.2em;
+  margin-right: 8px;
+}

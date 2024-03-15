@@ -20,6 +20,16 @@ export const quizQuestions = {
                 "world",                
             ],
             correctAnswer: "hello world"
+        },
+
+        {
+            type: "create-sentence",
+            question: "pytanie numer trzy",
+            choices: [
+                "hello",
+                "cat",                
+            ],
+            correctAnswer: "hello cat"
         }
     ]
 

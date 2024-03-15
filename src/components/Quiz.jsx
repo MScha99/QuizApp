@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { resultInitialState } from "../constants"
 import Timer from "./Timer"
+import Task from "./Task"
 
 
 
@@ -13,6 +14,7 @@ const Quiz = ({questions}) => {
     const [result, setResult] = useState(resultInitialState)
     const [showResult, setShowResult] = useState(false)
     const {type, question, choices, correctAnswer} = questions[currentQuestion]
+    const [sentence, setSentence] = useState([])
 
     const onAnswerClick = (answer, index) => {
         setAnswerIndex(index)
@@ -25,7 +27,9 @@ const Quiz = ({questions}) => {
 
 
     //update scores when user moves to next question; display results after last question
-    const onClickNext = () => {
+    const onClickNext = ({type}) => {
+        switch (type){
+            case 'single-choice':
         setAnswerIndex(null)
         setResult((prev) =>
             answer ? {
@@ -37,9 +41,17 @@ const Quiz = ({questions}) => {
                     wrongAnswers: prev.wrongAnswers +1
                 }
         )
-        if (currentQuestion !==questions.length -1){
-            setCurrentQuestion((prev)=> prev +1)
-        } else setShowResult(true)
+       
+            break
+
+            case 'create-sentence':
+            console.log("test")
+            break
+            
+    }
+    if (currentQuestion !==questions.length -1){
+        setCurrentQuestion((prev)=> prev +1)
+    } else setShowResult(true)
     }
 
 
@@ -51,24 +63,19 @@ const Quiz = ({questions}) => {
         {!showResult ? ( <div>
             <Timer/>
         <span> Pytanie {currentQuestion+1} / {questions.length}</span>
-        <h2>{question}</h2>
-        {type !=="create-sentence2" ? (<ul>
-            {
-                choices.map((choice, index)=> (
-                    <li 
-                    key={choice} 
-                    onClick={()=> onAnswerClick (choice, index)}
-                    className={answerIndex === index ? "selected-answer" : null}
-                    >
-                        {choice}
-                    </li>
-                ))
-            }
-        </ul>) : "TODO układanie zdania ze słówek"}
+        <Task
+        type={type}
+        question={question}
+        choices={choices}
+        onAnswerClick={onAnswerClick}
+        answerIndex={answerIndex}
+        sentence={sentence} 
+        setSentence={setSentence} 
+        />
         
         <div>
             <button 
-            onClick={onClickNext}
+            onClick={()=> onClickNext({type})}
             disabled={answerIndex === null}
             >
                 {currentQuestion === questions.length -1 ? "zakończ" : "następne pytanie"} 
