@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #a8c0ff;
+  background: linear-gradient(to right, #3f2b96, #a8c0ff);
+  padding-top: 80px;
+  overflow-y: hidden;
+}

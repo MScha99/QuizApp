@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
+import "./Task.css";
 
 
 const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, setSentence }) => {
