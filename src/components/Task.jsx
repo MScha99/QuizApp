@@ -1,10 +1,18 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { useEffect } from "react"
 import "./Task.css";
 
 
 const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, setSentence }) => {
+
+
+    useEffect(() => {
+        console.log("use effect: ",sentence.join(" "));
+        onAnswerClick(sentence.join(' '))
+    }, [sentence]);
+
 
 
         const handleOnDragEnd = (result) => {
@@ -16,19 +24,23 @@ const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, s
             const [reorderedItem] = items.splice(result.source.index, 1)
             items.splice(result.destination.index, 0, reorderedItem)
             setSentence(items)
+           
+                        
+            
         }
 
         const removeWord = (index) => {
             const newSentence = [...sentence];
             newSentence.splice(index, 1);
             setSentence(newSentence);
+            
         };
 
 
     switch (type) {
       case 'single-choice':
         return (  <div>
-            <h2>{question}</h2>
+            <h2 className="question-text">{question}</h2>
             <ul>{  choices.map((choice, index)=> (
                 <li 
                 key={choice} 
@@ -75,7 +87,11 @@ const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, s
             <div>{  choices.map((choice, index)=> (
                 <button 
                 key={choice} 
-                onClick={()=>  setSentence([...sentence, choice])}
+                onClick={() => {
+                    setSentence(prevSentence => [...prevSentence, choice]);
+                    
+                }}
+
                 disabled={sentence.includes(choice)}
                 className={"choice-create-sentence"}
                 >

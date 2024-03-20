@@ -29,3 +29,7 @@ li.selected-answer {
     margin: 5px;
     background-color: rgb(208, 205, 234);
 }
+
+.question-text {
+    white-space: pre-wrap
+}
