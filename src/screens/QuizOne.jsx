@@ -2,11 +2,13 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import { resultInitialState } from '../constants'
-import './Quiz.css'
-import Timer from './Timer'
-import Task from './Task'
+import { Link } from 'react-router-dom'
 
-const Quiz = ({ questions }) => {
+import './Quiz.css'
+import Timer from '../components/Timer'
+import Task from '../components/Task'
+
+const QuizOne = ({ questions }) => {
   let quizTime = 100
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answerIndex, setAnswerIndex] = useState(null)
@@ -122,11 +124,20 @@ const Quiz = ({ questions }) => {
           <p>Poprawne odpowiedzi: {result.correctAnswers}</p>
           <p>Błędne odpowiedzi: {result.wrongAnswers}</p>
           <p>Upłynięty czas: {elapsedTime} s</p>
-          <button onClick={exportResultsToFile}>Pobierz Wynik</button>
+
+          <Link to='/'>
+            <button
+              onClick={() => {
+                exportResultsToFile()
+              }}
+            >
+              Zakończ moduł
+            </button>
+          </Link>
         </div>
       )}
     </div>
   )
 }
 
-export default Quiz
+export default QuizOne

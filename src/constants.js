@@ -1,5 +1,5 @@
 export const quizQuestions = {
-  questions: [
+  questionsOne: [
     {
       type: 'single-choice',
       question: 'pytanie numer jeden',
@@ -23,9 +23,9 @@ export const quizQuestions = {
 
     {
       type: 'single-choice',
-      question: 'pytanie numer cztery',
-      choices: ['odpowiedz 1', 'odpowiedz 2', 'odpowiedz 3', 'odpowiedz 4'],
-      correctAnswer: 'odpowiedz 2',
+      question: 'a small domesticated carnivorous mammal with soft fur, a short snout, and retractable claws. It is widely kept as a pet or for catching mice, and many breeds have been developed.\n \nO jakie zwierze chodzi?',
+      choices: ['Kot', 'Pies', 'Szczur'],
+      correctAnswer: 'Kot',
     },
   ],
 }

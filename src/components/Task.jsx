@@ -14,7 +14,7 @@ const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, s
     }, [sentence]);
 
 
-    
+
         const handleOnDragEnd = (result) => {
             if (!result.destination) {
                 return; // Exit the function if dropped outside the droppable area
@@ -40,7 +40,7 @@ const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, s
     switch (type) {
       case 'single-choice':
         return (  <div>
-            <h2>{question}</h2>
+            <h2 className="question-text">{question}</h2>
             <ul>{  choices.map((choice, index)=> (
                 <li 
                 key={choice} 
