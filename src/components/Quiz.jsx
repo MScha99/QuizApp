@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react"
 import { resultInitialState } from "../constants"
+import "./Quiz.css";
 import Timer from "./Timer"
 import Task from "./Task"
 
@@ -61,8 +62,8 @@ const Quiz = ({questions}) => {
 
     return <div className="quiz-container">
         {!showResult ? ( <div>
+            <h3> Pytanie {currentQuestion+1} / {questions.length}</h3>
             <Timer/>
-        <span> Pytanie {currentQuestion+1} / {questions.length}</span>
         <Task
         type={type}
         question={question}
