@@ -6,7 +6,7 @@ import Quiz from "./components/Quiz"
 import {quizQuestions} from "./constants"
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return <Quiz questions={quizQuestions.questions}/>
 
@@ -14,3 +14,4 @@ function App() {
 }
 
 export default App
+7
