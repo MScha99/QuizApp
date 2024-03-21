@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import './Quiz.css'
 import Timer from '../components/Timer'
 import Task from '../components/Task'
+import Tutorial from '../components/Tutorial'
 
 const QuizOne = ({ questions }) => {
   let quizTime = 100
@@ -82,13 +83,17 @@ const QuizOne = ({ questions }) => {
   }
 
   return (
-    <div className='quiz-container'>
+    <>
+<div className='quiz-container'>
       {!showResult ? (
         <div>
+          <div className='header'>
           <h3>
             {' '}
-            Pytanie {currentQuestion + 1} / {questions.length}
+            Pytanie {currentQuestion + 1} / {questions.length}            
           </h3>
+          <Tutorial />
+          </div>
           <Timer
             setShowResult={setShowResult}
             counter={counter}
@@ -137,6 +142,7 @@ const QuizOne = ({ questions }) => {
         </div>
       )}
     </div>
+    </>
   )
 }
 

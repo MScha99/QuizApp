@@ -2,14 +2,16 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Tutorial from '../components/Tutorial'
 
 const Homepage = () => {
   return (
     <div>
       <h1>homepage siema</h1>
-      <Link to='/quizone'>Rozpocznij pierwszy moduł</Link>
-      <Link to='/quiztwo'>Rozpocznij drugi moduł</Link>
-      <Link to='/quizthree'>Rozpocznij trzeci moduł</Link>
+      <Tutorial />
+      <Link to='/quizone'><button>Rozpocznij pierwszy moduł</button></Link>
+      <Link to='/quiztwo'><button>Rozpocznij drugi moduł</button></Link>
+      <Link to='/quizthree'><button>Rozpocznij trzeci moduł</button></Link>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { resultInitialState } from '../constants'
 import './Quiz.css'
 import Timer from '../components/Timer'
 import Task from '../components/Task'
+import Tutorial from '../components/Tutorial'
 
 const QuizTwo = ({ questions }) => {
   let quizTime = 100
@@ -83,10 +84,13 @@ const QuizTwo = ({ questions }) => {
     <div className='quiz-container'>
       {!showResult ? (
         <div>
+          <div className='header'>
           <h3>
             {' '}
-            Pytanie {currentQuestion + 1} / {questions.length}
+            Pytanie {currentQuestion + 1} / {questions.length}            
           </h3>
+          <Tutorial />
+          </div>
           <Timer
             setShowResult={setShowResult}
             counter={counter}
