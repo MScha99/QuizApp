@@ -2,30 +2,52 @@ export const quizQuestions = {
   questionsOne: [
     {
       type: 'single-choice',
-      question: 'pytanie numer jeden',
-      choices: ['odpowiedz 1', 'odpowiedz 2', 'odpowiedz 3', 'odpowiedz 4'],
-      correctAnswer: 'odpowiedz 3',
-    },
-
-    {
-      type: 'create-sentence',
-      question: 'pytanie numer dwa',
-      choices: ['hello', 'world'],
-      correctAnswer: 'hello world',
-    },
-
-    {
-      type: 'create-sentence',
-      question: 'pytanie numer trzy',
-      choices: ['hello', 'cat'],
-      correctAnswer: 'hello cat',
+      question: 'Cześć',
+      choices: ['Elsa', 'Terve', 'Tervetuloa', 'Onnea'],
+      correctAnswer: 'Terve',
     },
 
     {
       type: 'single-choice',
-      question: 'a small domesticated carnivorous mammal with soft fur, a short snout, and retractable claws. It is widely kept as a pet or for catching mice, and many breeds have been developed.\n \nO jakie zwierze chodzi?',
-      choices: ['Kot', 'Pies', 'Szczur'],
-      correctAnswer: 'Kot',
+      question: 'Witam',
+      choices: ['Terve', 'Tervetuloa', 'Onnea', 'Otso', 'olemee'],
+      correctAnswer: 'Tervetuloa',
+    },
+
+    {
+      type: 'single-choice',
+      question: 'Nainen',
+      choices: ['nie', 'mężczyzna', 'kobieta', 'dziecko', 'nie wiem'],
+      correctAnswer: 'kobieta',
+    },
+
+    {
+      type: 'single-choice',
+      question: 'Anteeksi',
+      choices: ['Dziękuję', 'Przepraszam', 'Na razie', 'Cześć', 'Usiądź'],
+      correctAnswer: 'Przepraszam',
+    },
+
+    {
+      type: 'create-sentence',
+      question: 'Cześć! Kim jesteś?',
+      choices: [
+        'Kuka', 'mies', 'sauna', 'olet', 'sinä', 'Terve', 'Onnea', 'hän'],
+      correctAnswer: 'Terve Kuka sinä olet',
+    },
+
+    {
+      type: 'create-sentence',
+      question: 'Jestem Otso',
+      choices: ['Terve', 'Onnea', 'Otso', 'olemee', 'Minä', 'olen'],
+      correctAnswer: 'Minä olen Otso',
+    },
+
+    {
+      type: 'single-choice',
+      question: 'Dziecko',
+      choices: ['lapsi', 'väinö', 'mies', 'hauska', 'onnea', 'sinä'],
+      correctAnswer: 'lapsi',
     },
   ],
 }

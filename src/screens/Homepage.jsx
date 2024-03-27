@@ -7,7 +7,7 @@ import Tutorial from '../components/Tutorial'
 const Homepage = () => {
   return (
     <div>
-      <h1>homepage siema</h1>
+      <h1>homepage</h1>
       <Tutorial />
       <Link to='/quizone'><button>Rozpocznij pierwszy moduł</button></Link>
       <Link to='/quiztwo'><button>Rozpocznij drugi moduł</button></Link>
