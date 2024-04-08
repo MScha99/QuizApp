@@ -39,7 +39,7 @@ const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, s
 
     switch (type) {
       case 'single-choice':
-        return (  <div>
+        return (  <div className='task-container'>
             <h2 className="question-text">{question}</h2>
             <ul>{  choices.map((choice, index)=> (
                 <li 
@@ -54,7 +54,7 @@ const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, s
           
         )
       case 'create-sentence':
-        return (  <div>
+        return (  <div className='task-container'>
             <h2>{question}</h2>
 
 
@@ -62,7 +62,7 @@ const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, s
                 <Droppable droppableId="characters" direction="horizontal">
                     {(provided) => (
 
-            <div style={{ display: 'flex' }} {...provided.droppableProps} ref={provided.innerRef}
+            <div className='draggable-container' style={{ display: 'flex', justifyContent: "center" }} {...provided.droppableProps} ref={provided.innerRef}
             > 
                 {  sentence.map((word, index)=> (
                     <Draggable key={word} draggableId={word} index={index}>
@@ -84,8 +84,9 @@ const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, s
 
 
 
-            <div>{  choices.map((choice, index)=> (
+            <div className='choices-container'>{  choices.map((choice, index)=> (
                 <button 
+                className = 'choice-button'
                 key={choice} 
                 onClick={() => {
                     setSentence(prevSentence => [...prevSentence, choice]);
@@ -93,7 +94,7 @@ const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, s
                 }}
 
                 disabled={sentence.includes(choice)}
-                className={"choice-create-sentence"}
+                
                 >
                     {choice}
                 </button>

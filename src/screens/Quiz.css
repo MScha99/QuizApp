@@ -1,9 +1,11 @@
 .quiz-container {
+    
     background: rgba(217, 214, 228, 0.12);
     border-radius: 10px;
     padding: 5px 20px 50px;
     width: auto;
-    max-width: 600px;
+    min-width: 600px;
+    max-width: 1000px;
     margin: 0 auto 264px;
 }
 
@@ -22,13 +24,13 @@ h2, h3, p {
 
 
 
-button {
+.next-button {
     border: solid 1px #f1f1f1;
     background-color: rgb(254, 253, 255);
     margin: 5px;
 }
 
-button:enabled:hover {
+.next-button:enabled:hover {
     background-color: rgb(78, 72, 126);
     border: solid 1px rgb(78, 72, 126);
     color: #f7f6f6;

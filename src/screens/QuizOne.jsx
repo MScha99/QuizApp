@@ -10,7 +10,7 @@ import Task from '../components/Task'
 import Tutorial from '../components/Tutorial'
 
 const QuizOne = ({ questions }) => {
-  let quizTime = 100
+  let quizTime = 10000000000
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answerIndex, setAnswerIndex] = useState(null)
   const [answer, setAnswer] = useState(null)
@@ -112,7 +112,7 @@ const QuizOne = ({ questions }) => {
           />
 
           <div>
-            <button
+            <button className='next-button'
               onClick={() => onClickNext({ type })}
               disabled={answerIndex === null}
             >

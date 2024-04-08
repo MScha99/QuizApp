@@ -20,11 +20,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/quiztwo',
-    element: <QuizTwo questions={quizQuestions.questionsOne} />,
+    element: <QuizTwo questions={quizQuestions.questionsTwo} />,
   },
   {
     path: '/quizthree',
-    element: <QuizThree questions={quizQuestions.questionsOne} />,
+    element: <QuizThree questions={quizQuestions.questionsThree} />,
   },
 ])
 
