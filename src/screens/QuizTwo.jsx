@@ -2,13 +2,17 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import { resultInitialState } from '../constants'
+import { Link } from 'react-router-dom'
+
 import './Quiz.css'
 import Timer from '../components/Timer'
 import Task from '../components/Task'
 import Tutorial from '../components/Tutorial'
+import TopBanner from '../components/TopBanner'
+import RightBanner from '../components/RightBanner'
 
 const QuizTwo = ({ questions }) => {
-  let quizTime = 100
+  let quizTime = 10000000000
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answerIndex, setAnswerIndex] = useState(null)
   const [answer, setAnswer] = useState(null)
@@ -81,7 +85,10 @@ const QuizTwo = ({ questions }) => {
   }
 
   return (
-    <div className='quiz-container'>
+    <>
+    <TopBanner/>
+    <RightBanner/>
+<div className='quiz-container'>
       {!showResult ? (
         <div>
           <div className='header'>
@@ -109,7 +116,7 @@ const QuizTwo = ({ questions }) => {
           />
 
           <div>
-            <button
+            <button className='next-button'
               onClick={() => onClickNext({ type })}
               disabled={answerIndex === null}
             >
@@ -126,10 +133,20 @@ const QuizTwo = ({ questions }) => {
           <p>Poprawne odpowiedzi: {result.correctAnswers}</p>
           <p>Błędne odpowiedzi: {result.wrongAnswers}</p>
           <p>Upłynięty czas: {elapsedTime} s</p>
-          <button onClick={exportResultsToFile}>Pobierz Wynik</button>
+
+          <Link to='/'>
+            <button
+              onClick={() => {
+                exportResultsToFile()
+              }}
+            >
+              Zakończ moduł
+            </button>
+          </Link>
         </div>
       )}
     </div>
+    </>
   )
 }
 
