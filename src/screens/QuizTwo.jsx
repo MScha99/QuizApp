@@ -10,6 +10,7 @@ import Task from '../components/Task'
 import Tutorial from '../components/Tutorial'
 import TopBanner from '../components/TopBanner'
 import RightBanner from '../components/RightBanner'
+import Return from '../components/Return'
 
 const QuizTwo = ({ questions }) => {
   let quizTime = 10000000000
@@ -97,6 +98,7 @@ const QuizTwo = ({ questions }) => {
             Pytanie {currentQuestion + 1} / {questions.length}            
           </h3>
           <Tutorial />
+          <Return />
           </div>
           <Timer
             setShowResult={setShowResult}
