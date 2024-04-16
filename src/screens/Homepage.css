@@ -1,0 +1,28 @@
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    border-radius: 5px;
+    border: solid 1px #f1f1f1;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    color: #000;
+    cursor: pointer;
+    background-color: rgb(254, 253, 255);
+    font-size: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+li:hover {
+    background-color: rgb(78, 72, 126);
+    border: solid 1px rgb(78, 72, 126);
+    color: #f7f6f6;
+}

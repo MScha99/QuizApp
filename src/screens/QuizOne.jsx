@@ -8,6 +8,7 @@ import './Quiz.css'
 import Timer from '../components/Timer'
 import Task from '../components/Task'
 import Tutorial from '../components/Tutorial'
+import Return from '../components/Return'
 
 const QuizOne = ({ questions }) => {
   let quizTime = 10000000000
@@ -93,6 +94,7 @@ const QuizOne = ({ questions }) => {
             Pytanie {currentQuestion + 1} / {questions.length}            
           </h3>
           <Tutorial />
+          <Return />
           </div>
           <Timer
             setShowResult={setShowResult}
