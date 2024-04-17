@@ -11,6 +11,7 @@ import Tutorial from '../components/Tutorial'
 import TopBanner from '../components/TopBanner'
 import RightBanner from '../components/RightBanner'
 import Return from '../components/Return'
+import {banners}  from '../constants' 
 
 const QuizTwo = ({ questions }) => {
   let quizTime = 10000000000
@@ -87,8 +88,8 @@ const QuizTwo = ({ questions }) => {
 
   return (
     <>
-    <TopBanner/>
-    <RightBanner/>
+    <TopBanner banners={banners.QuizTwo.top} currentQuestion={currentQuestion}/>
+    <RightBanner banners={banners.QuizTwo.side} currentQuestion={currentQuestion}/>
 <div className='quiz-container'>
       {!showResult ? (
         <div>
