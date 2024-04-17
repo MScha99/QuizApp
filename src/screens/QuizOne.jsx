@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { resultInitialState } from '../constants'
 import { Link } from 'react-router-dom'
 
+
 import './Quiz.css'
 import Timer from '../components/Timer'
 import Task from '../components/Task'
