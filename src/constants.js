@@ -160,7 +160,33 @@ export const quizQuestions = {
   ],
 }
 
+export const banners = {
 
+ QuizTwo: {
+  top: [
+    'media/TwoTop/banner.png',
+    'media/TwoTop/widestjigglin.webp',
+ 
+
+  ],
+
+  side: [
+    'media/TwoSide/crunch-cat.gif',
+    'media/TwoSide/widetime.gif'
+
+  ]
+ },
+ QuizThree: {
+  top: [
+
+  ],
+
+  side: [
+
+  ]
+ },
+
+}
 
 export const resultInitialState = {
   score: 0,
