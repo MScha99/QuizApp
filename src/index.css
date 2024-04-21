@@ -12,6 +12,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --duogreen: rgba(90, 204, 2);
+  --duogreen-light: rgba(90, 204, 2, 0.12);
+  --duoblue: rgba(28, 176, 246);
+  --duoblue-light: rgba(28, 176, 246, 0.12);
+  --duored: rgba(255, 75, 75);
+  --duored-light: rgba(255, 75, 75, 0.12);
+  --outline: #E5E5E5;
 }
 
 a {
