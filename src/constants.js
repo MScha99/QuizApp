@@ -601,7 +601,7 @@ export const quizQuestions = {
 	  choices: ['nainen', ' aina', ' Anteeksi', ' on', ' kaunis', 'Suomi', ' todella', ' sinä'],
 	  correctAnswer: 'Suomi on aina kaunis',
 	},
-  ]
+  ],
   questionsTwo: [
 	{
 	  type: 'create-sentence',

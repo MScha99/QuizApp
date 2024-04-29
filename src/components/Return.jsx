@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import "./Return.css"
+import { Button } from '@mui/material'
 
 export default function Return() {
   const [display, setDisplay] = useState(false)
@@ -13,22 +12,19 @@ export default function Return() {
 
   return (
     <div>
-      <button onClick={toggleDsiplay} className='btn-display'>
-        {' '}
-        <FontAwesomeIcon icon={faHouse} />{' '}
-      </button>
+      <Button variant='outlined' onClick={toggleDsiplay}>Strona główna</Button>
 
       {display ? <div className="prompt">
         <div className="overlay">
-        <div className="prompt-content">
+          <div className="prompt-content">
             <h2 className="prompt-content-text">Czy na pewno chcesz wrócić na ekran główny?</h2>
             <Link to='/'><button
-                    onClick={toggleDsiplay} className='btn-return' >Tak</button>
-                    </Link>
+              onClick={toggleDsiplay} className='btn-return' >Tak</button>
+            </Link>
             <button
-                    onClick={toggleDsiplay} className='btn-return'>Nie</button>
-                    
-        </div>
+              onClick={toggleDsiplay} className='btn-return'>Nie</button>
+
+          </div>
         </div>
       </div> : null}
     </div>
