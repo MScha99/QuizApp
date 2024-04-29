@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, Fragment} from 'react'
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -8,7 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import InfoIcon from '@mui/icons-material/InfoOutlined';
 
 export default function GuidebookDialog() {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -19,7 +19,7 @@ export default function GuidebookDialog() {
     };
 
     return (
-        <React.Fragment>
+        <Fragment>
             <div>
                 <Button
                     variant="contained"
@@ -83,6 +83,6 @@ export default function GuidebookDialog() {
                     <Button onClick={handleClose} autoFocus>OK</Button>
                 </DialogActions>
             </Dialog>
-        </React.Fragment>
+        </Fragment>
     );
 }

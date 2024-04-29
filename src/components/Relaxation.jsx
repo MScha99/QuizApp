@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import "./Relaxation.css"
+
 
 export default function Relaxation() {
   const [display, setDisplay] = useState(false)

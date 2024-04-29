@@ -1,4 +1,5 @@
-import * as React from 'react';
+
+import { useState, Fragment} from 'react'
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -9,7 +10,7 @@ import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 
 export default function HomeDialog() {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -20,7 +21,7 @@ export default function HomeDialog() {
     };
 
     return (
-        <React.Fragment>
+        <Fragment>
             <div>
                 <Button
                     variant="outlined"
@@ -69,6 +70,6 @@ export default function HomeDialog() {
                     </Link>
                 </DialogActions>
             </Dialog>
-        </React.Fragment>
+        </Fragment>
     );
 }

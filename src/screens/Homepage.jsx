@@ -2,11 +2,12 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
 import Relaxation from '../components/Relaxation'
-import "./Homepage.css"
+
 
 const Homepage = () => {
+
+
   return (
     <div>
       <h1>homepage</h1>
