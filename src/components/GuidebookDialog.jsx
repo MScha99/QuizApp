@@ -48,7 +48,7 @@ export default function GuidebookDialog() {
                         }
                     }}
                 >
-                    Poradnik
+                    Słowniczek
                 </Button>
             </div>
             <Dialog
@@ -60,7 +60,7 @@ export default function GuidebookDialog() {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title">
-                    Poradnik
+                Słowniczek
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">

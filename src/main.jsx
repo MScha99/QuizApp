@@ -5,6 +5,7 @@ import { quizQuestions } from './constants'
 import { banners } from './constants'
 import Homepage from './screens/Homepage.jsx'
 import QuizScaffold from './screens/QuizScaffold.jsx'
+import Relaxation from './screens/Relaxation.jsx'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: '/quizthree',
     element: <QuizScaffold questions={quizQuestions.questionsThree} banners={banners.QuizThree}/>,
+  },
+
+  {
+    path: '/relaxation',
+    element: <Relaxation/>,
   },
 ])
 

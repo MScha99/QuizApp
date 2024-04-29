@@ -28,6 +28,7 @@ export default function QuizScaffold({ questions, banners=null }) {
   const [sentence, setSentence] = useState([])
   const [counter, setCounter] = useState(quizTime)
   const [elapsedTime, setElapsedTime] = useState(0)
+  const [footColor, setFootColor] = useState('white');
 
   const onAnswerClick = (answer, index = null) => {
     switch (type) {
@@ -50,24 +51,30 @@ export default function QuizScaffold({ questions, banners=null }) {
     console.log('correctanswer: ', { correctAnswer })
     setResult((prev) =>
       answer === correctAnswer
-        ? {
+        ? (setFootColor('lightgreen'),{
             ...prev,
             score: prev.score + 1,
             correctAnswers: prev.correctAnswers + 1,
-          }
-        : {
+            
+          })
+        : (setFootColor('red'),{
             ...prev,
             wrongAnswers: prev.wrongAnswers + 1,
-          }
+          })
     )
-
-    if (currentQuestion !== questions.length - 1) {
-      setCurrentQuestion((prev) => prev + 1)
-    } else {
-      setElapsedTime(quizTime - counter)
-      setShowResult(true)
-    }
+    setTimeout(()=>{
+      if (currentQuestion !== questions.length - 1) {
+        setCurrentQuestion((prev) => prev + 1)
+      } else {
+        setElapsedTime(quizTime - counter)
+        setShowResult(true)
+      }
+      setFootColor('white')
+      setAnswerIndex(null)
+    },800)
+  
   }
+  
 
   const exportResultsToFile = () => {
     const resultsText = `
@@ -147,7 +154,7 @@ export default function QuizScaffold({ questions, banners=null }) {
             // flexDirection: 'column',
             // alignItems: 'center',
             // justifyContent: 'space-between',
-            overflow: 'hidden', // Prevents content overflow
+            overflow: 'hidden', 
           }}
         >
           {!showResult ? (
@@ -238,8 +245,15 @@ export default function QuizScaffold({ questions, banners=null }) {
               <Box
                 className='Foot'
                 sx={{
-                  //   bgcolor: 'lightgreen',
-                  minHeight: '5vh',
+                     bgcolor: footColor,
+                    minWidth: "100%",
+                  minHeight: '8vh',
+                  marginLeft: '-16px', 
+                  marginRight: '-16px',
+                  marginBottom: '-8px', 
+                   paddingLeft: '30px',
+                   paddingTop: '10px',
+                   transition: 'background-color 0.5s ease'
                 }}
               >
                 <Button
@@ -258,6 +272,7 @@ export default function QuizScaffold({ questions, banners=null }) {
                     boxShadow: 'none',
                     borderWidth: 2,
                     borderColor: '#E5E5E5',
+                    zIndex: 1500,
                     ':hover': {
                       borderWidth: 2,
                       boxShadow: 'none',
@@ -267,6 +282,7 @@ export default function QuizScaffold({ questions, banners=null }) {
                       borderWidth: 2,
                       boxShadow: 'none',
                       backgroundColor: '#378803',
+                      zIndex: 1500,
                     },
                   }}
                 >
