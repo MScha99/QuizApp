@@ -3,7 +3,7 @@
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { useEffect } from "react"
 import "./Task.css";
-import { Button, Typography } from '@mui/material';
+import { Button, Typography, Box } from '@mui/material';
 
 
 const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, setSentence }) => {
@@ -109,37 +109,101 @@ const Task = ({ type, question, choices, onAnswerClick, answerIndex, sentence, s
                 <DragDropContext onDragEnd={handleOnDragEnd}>
                     <Droppable droppableId="characters" direction="horizontal">
                         {(provided) => (
-                            <div className='draggable-container' style={{ display: 'flex', justifyContent: "center" }} {...provided.droppableProps} ref={provided.innerRef}>
+
+
+                            <Box className='draggable-container' 
+                            sx = {{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                borderTop: 1,
+                                borderBottom: 1,
+                                minHeight: 70,
+                                borderColor: '#d6d6d6'
+                            }}
+                             {...provided.droppableProps} ref={provided.innerRef}>
                                 {sentence.map((word, index) => (
                                     <Draggable key={word} draggableId={word} index={index}>
                                         {(provided) => (
-                                            <div className="draggable-words" {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}
+                                            <Box className="draggable-words" 
+                                            sx={{
+                                                borderRadius: "5px",
+                                                margin: 1, 
+                                                padding: 2, 
+                                                backgroundColor: '#fefdff',
+                                                border: '6px solid #d6d6d6',
+                                                display: 'inline-block',
+                                                ':hover': {backgroundColor: '#4e487e', color: '#f7f6f6'}
+                                            }}
+                                             {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}
                                                 onClick={() => removeWord(index)}
                                             >
                                                 {word}
-                                            </div>
+                                            </Box>
                                         )}
                                     </Draggable>
                                 ))}
                                 {provided.placeholder}
-                            </div>
+                            </Box>
+
+
 
                         )}
                     </Droppable>
                 </DragDropContext>
 
-                <div className='choices-container'>{choices.map((choice, index) => (
-                    <button
+                <Box className='choices-container'
+                sx ={{
+                    marginTop: '50px',
+                    marginBottom: '50px',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    // maxWidth: '400px',
+                    maxWidth: '30vw',
+                    justifyContent: 'center',
+                    display: 'flex',
+                    flexWrap: 'wrap'
+                    
+
+                }}
+                >{choices.map((choice, index) => (
+                    <Button
                         className='choice-button'
                         key={choice}
                         onClick={() => {
                             setSentence(prevSentence => [...prevSentence, choice]);
                         }}
                         disabled={sentence.includes(choice)}
+                        sx={{
+                            backgroundColor: '#fefdff',       
+                            border: 'solid 6px #d6d6d6',       
+                            margin: '5px',  
+                            textTransform: 'none',                  
+                    
+                           
+                            ':hover': {
+                                backgroundColor: '#4e487e',  
+                                border: 'solid 6px #d6d6d6',  
+                                color: '#f7f6f6',              
+                            },
+                    
+                           
+                            ':disabled': {
+                                backgroundColor: '#d6d6d6',   
+                                border: 'solid 6px #d6d6d6',  
+                                color: '#d6d6d6',            
+                            },
+                    
+                            
+                            ':disabled:hover': {
+                                backgroundColor: '#d6d6d6',  
+                                border: 'solid 6px #d6d6d6',  
+                                color: '#d6d6d6',           
+                            },
+                        }}
                     >
                         {choice}
-                    </button>
-                ))}</div>
+                    </Button>
+                ))}</Box>
             </div>
             )
         default:
