@@ -127,7 +127,7 @@ export default function QuizScaffold({ questions, banners=null }) {
           sx={{
             borderRadius: 8,
             // height: '100%',
-            maxHeight: '70vh',
+            maxHeight: '76vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -148,8 +148,8 @@ export default function QuizScaffold({ questions, banners=null }) {
             border: 2,
             borderRadius: 12,
             borderColor: '#E5E5E5',
-            minHeight: '70vh',
-            maxHeight: '70vh',
+            minHeight: '76vh',
+            maxHeight: '76vh',
             // display: 'flex',
             // flexDirection: 'column',
             // alignItems: 'center',
@@ -229,7 +229,7 @@ export default function QuizScaffold({ questions, banners=null }) {
                 className='Body'
                 sx={{
                   //   bgcolor: 'lightblue',
-                  minHeight: '50vh',
+                  minHeight: '56vh',
                 }}
               >
                 <Task
@@ -319,7 +319,7 @@ export default function QuizScaffold({ questions, banners=null }) {
           //   bgcolor='lightyellow'
           sx={{
             borderRadius: 8,
-            maxHeight: '70vh',
+            maxHeight: '76vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
