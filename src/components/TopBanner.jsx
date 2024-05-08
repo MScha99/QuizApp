@@ -13,7 +13,7 @@ export default function TopBanner({ banners, currentQuestion }) {
         src={banners[currentQuestion % banners.length]}
         alt='Ad Banner'
         className='banner-image'
-        style={{ maxWidth: '100%', height: 'auto' }} 
+        style={{ width: 'auto', height: 'auto', display: 'block' }} 
       />
     </div>
   );

@@ -4287,11 +4287,11 @@ export const banners = {
     popup: []
   },
   QuizThree: {
-    top: [],
+    top: ['media/TwoTop/banner.png', 'media/TwoTop/widestjigglin.webp'],
 
-    right: ['media/TwoSide/widetime.gif'],
+    right: ['media/TwoRight/sidebanner.png','media/TwoRight/bannertest.png','media/TwoRight/crunch-cat.gif', 'media/TwoSide/widetime.gif'],
 
-    left: ['media/TwoSide/widetime.gif'],
+    left: ['media/TwoLeft/crunch-cat.gif', 'media/TwoSide/widetime.gif','media/TwoLeft/sidebanner.png',],
 
     popup: ['media/TwoRight/crunch-cat.gif']
   }

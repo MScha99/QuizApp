@@ -12,7 +12,7 @@ export default function SideBanner({ banners, currentQuestion }) {
         src={banners[currentQuestion % banners.length]}
         alt='Ad Banner'
         className='right-banner-image'
-        style={{ maxWidth: '100%', height: 'auto' }} 
+        style={{ width: 'auto', height: 'auto', display: 'block' }} 
       />
     </div>
   )
