@@ -7,7 +7,7 @@ import {
   LinearProgress,
   Typography,
 } from '@mui/material'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { resultInitialState } from '../constants'
 import { Link } from 'react-router-dom'
 import Timer from '../components/Timer'
@@ -35,6 +35,13 @@ export default function QuizScaffold({
   const [elapsedTime, setElapsedTime] = useState(0)
   const [footColor, setFootColor] = useState('white')
   const [displayPopup, setDisplayPopup] = useState(false)
+  const [startTime, setStartTime] = useState(null) // Track start time of quiz
+  const [actionTimes, setActionTimes] = useState([]) // Track proceeding to next task
+
+  useEffect(() => {
+    // Record the start time when QuizScaffold is invoked
+    setStartTime(new Date())
+  }, [])
 
   const onAnswerClick = (answer, index = null) => {
     switch (type) {
@@ -78,16 +85,26 @@ export default function QuizScaffold({
       }
       setFootColor('white')
       setAnswerIndex(null)
+      const actionTime = new Date()
+      setActionTimes((prevTimes) => [...prevTimes, actionTime])
     }, 800)
   }
 
   const exportResultsToFile = () => {
+    const actionTimesFormatted = actionTimes.map(
+      (time, index) =>
+        `Następne pytanie ${index + 1}: ${time.toLocaleTimeString()}`
+    )
+
     const resultsText = `
       Wyniki
-      Punkty: ${result.score}
+      
       Poprawne odpowiedzi: ${result.correctAnswers}
       Błędne odpowiedzi: ${result.wrongAnswers}
-      Upłynięty czas: ${elapsedTime} s
+      Upłynięty czas: ${elapsedTime} 
+      Czas rozpoczęcia modułu: ${startTime}
+      ${actionTimesFormatted.join('\n')}
+      Czas eksportu: ${Date().toLocaleString()}
     `
 
     const blob = new Blob([resultsText], { type: 'text/plain' })

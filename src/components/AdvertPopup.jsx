@@ -8,7 +8,7 @@ export default function AdvertPopup({
   displayPopup,
   setDisplayPopup,
   currentQuestion,
-  banners,
+  banners=[],
   quizTime,
 }) {
   const [counter, setCounter] = useState(quizTime)
@@ -55,8 +55,8 @@ export default function AdvertPopup({
         position: 'absolute',
         top: '66vh',
         left: '50vw',
-        width: '19vw',
-        height: 'auto',
+        width: '20vw',
+        height: '30vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
