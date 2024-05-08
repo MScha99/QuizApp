@@ -994,7 +994,8 @@ export const quizQuestions = {
       correctAnswer: 'Suomi on aina kaunis',
     },
   ],
-  questionsTwo: [
+
+   questionsTwo: [
     {
       type: 'create-sentence',
       question: 'To jest dobra sauna',
@@ -4272,22 +4273,30 @@ export const banners = {
     right: [],
 
     left: [],
+
+    pupup: []
   },
 
   QuizTwo: {
     top: ['media/TwoTop/banner.png', 'media/TwoTop/widestjigglin.webp'],
 
-    right: ['media/TwoSide/crunch-cat.gif', 'media/TwoSide/widetime.gif'],
+    right: ['media/TwoRight/crunch-cat.gif', 'media/TwoSide/widetime.gif'],
 
-    left: ['media/TwoSide/crunch-cat.gif', 'media/TwoSide/widetime.gif'],
+    left: ['media/TwoLeft/crunch-cat.gif', 'media/TwoSide/widetime.gif'],
+
+    popup: []
   },
   QuizThree: {
     top: [],
 
-    right: [],
+    right: ['media/TwoSide/widetime.gif'],
 
-    left: [],
-  },
+    left: ['media/TwoSide/widetime.gif'],
+
+    popup: ['media/TwoRight/crunch-cat.gif']
+  }
+ 
+  
 }
 
 export const resultInitialState = {

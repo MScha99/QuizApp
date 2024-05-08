@@ -20,8 +20,9 @@ const Timer = ({ setShowResult, counter, setCounter, setElapsedTime, quizTime })
                 setElapsedTime(quizTime);
             }
         }, 1000);
-
+       
         return () => clearInterval(timer);
+        
     }, [counter, setCounter, setShowResult, setElapsedTime, quizTime]);
 
     return (
