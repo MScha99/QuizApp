@@ -7,7 +7,7 @@ import {
   LinearProgress,
   Typography,
 } from '@mui/material'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { resultInitialState } from '../constants'
 import { Link } from 'react-router-dom'
 import Timer from '../components/Timer'
@@ -16,8 +16,13 @@ import HomeDialog from '../components/HomeDialog'
 import GuidebookDialog from '../components/GuidebookDialog'
 import TopBanner from '../components/TopBanner'
 import SideBanner from '../components/SideBanner'
+import AdvertPopup from '../components/AdvertPopup'
 
-export default function QuizScaffold({ questions, banners=null }) {
+export default function QuizScaffold({
+  questions,
+  banners = null,
+  popups = false,
+}) {
   let quizTime = 600
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answerIndex, setAnswerIndex] = useState(null)
@@ -28,7 +33,15 @@ export default function QuizScaffold({ questions, banners=null }) {
   const [sentence, setSentence] = useState([])
   const [counter, setCounter] = useState(quizTime)
   const [elapsedTime, setElapsedTime] = useState(0)
-  const [footColor, setFootColor] = useState('white');
+  const [footColor, setFootColor] = useState('white')
+  const [displayPopup, setDisplayPopup] = useState(false)
+  const [startTime, setStartTime] = useState(null) // Track start time of quiz
+  const [actionTimes, setActionTimes] = useState([]) // Track proceeding to next task
+
+  useEffect(() => {
+    // Record the start time when QuizScaffold is invoked
+    setStartTime(new Date())
+  }, [])
 
   const onAnswerClick = (answer, index = null) => {
     switch (type) {
@@ -51,18 +64,19 @@ export default function QuizScaffold({ questions, banners=null }) {
     console.log('correctanswer: ', { correctAnswer })
     setResult((prev) =>
       answer === correctAnswer
-        ? (setFootColor('lightgreen'),{
+        ? (setFootColor('lightgreen'),
+          {
             ...prev,
             score: prev.score + 1,
             correctAnswers: prev.correctAnswers + 1,
-            
           })
-        : (setFootColor('red'),{
+        : (setFootColor('red'),
+          {
             ...prev,
             wrongAnswers: prev.wrongAnswers + 1,
           })
     )
-    setTimeout(()=>{
+    setTimeout(() => {
       if (currentQuestion !== questions.length - 1) {
         setCurrentQuestion((prev) => prev + 1)
       } else {
@@ -71,18 +85,26 @@ export default function QuizScaffold({ questions, banners=null }) {
       }
       setFootColor('white')
       setAnswerIndex(null)
-    },800)
-  
+      const actionTime = new Date()
+      setActionTimes((prevTimes) => [...prevTimes, actionTime])
+    }, 800)
   }
-  
 
   const exportResultsToFile = () => {
+    const actionTimesFormatted = actionTimes.map(
+      (time, index) =>
+        `Następne pytanie ${index + 1}: ${time.toLocaleTimeString()}`
+    )
+
     const resultsText = `
       Wyniki
-      Punkty: ${result.score}
+      
       Poprawne odpowiedzi: ${result.correctAnswers}
       Błędne odpowiedzi: ${result.wrongAnswers}
-      Upłynięty czas: ${elapsedTime} s
+      Upłynięty czas: ${elapsedTime} 
+      Czas rozpoczęcia modułu: ${startTime}
+      ${actionTimesFormatted.join('\n')}
+      Czas eksportu: ${Date().toLocaleString()}
     `
 
     const blob = new Blob([resultsText], { type: 'text/plain' })
@@ -101,7 +123,8 @@ export default function QuizScaffold({ questions, banners=null }) {
     <Grid container spacing={2} columns={{ xs: 12, sm: 12, md: 12 }}>
       {/* Top Banner */}
       <Grid item xs={12} sm={12} md={12}>
-        <Box className="top-banner"
+        <Box
+          className='top-banner'
           p={2}
           //   bgcolor='lightblue'
           sx={{
@@ -114,8 +137,7 @@ export default function QuizScaffold({ questions, banners=null }) {
             overflow: 'hidden', // Prevents content overflow
           }}
         >
-          
-          <TopBanner banners={banners.top} currentQuestion={currentQuestion}/>
+          <TopBanner banners={banners.top} currentQuestion={currentQuestion} />
         </Box>
       </Grid>
 
@@ -123,7 +145,7 @@ export default function QuizScaffold({ questions, banners=null }) {
       <Grid item xs={3} sm={2} md={2}>
         <Box
           p={2}
-          //   bgcolor='lightgreen'
+          // bgcolor='lightgreen'
           sx={{
             borderRadius: 8,
             // height: '100%',
@@ -134,7 +156,10 @@ export default function QuizScaffold({ questions, banners=null }) {
             overflow: 'hidden', // Prevents content overflow
           }}
         >
-          <SideBanner banners={banners.left} currentQuestion={currentQuestion}/>
+          <SideBanner
+            banners={banners.left}
+            currentQuestion={currentQuestion}
+          />
         </Box>
       </Grid>
 
@@ -154,7 +179,7 @@ export default function QuizScaffold({ questions, banners=null }) {
             // flexDirection: 'column',
             // alignItems: 'center',
             // justifyContent: 'space-between',
-            overflow: 'hidden', 
+            overflow: 'hidden',
           }}
         >
           {!showResult ? (
@@ -223,6 +248,14 @@ export default function QuizScaffold({ questions, banners=null }) {
                     <HomeDialog />
                     <GuidebookDialog />
                   </Box>
+
+                  <AdvertPopup
+                    displayPopup={displayPopup}
+                    setDisplayPopup={setDisplayPopup}
+                    banners={banners.popup}
+                    currentQuestion={currentQuestion}
+                    quizTime={quizTime}
+                  />
                 </Box>
               </Box>
               <Box
@@ -245,15 +278,15 @@ export default function QuizScaffold({ questions, banners=null }) {
               <Box
                 className='Foot'
                 sx={{
-                     bgcolor: footColor,
-                    minWidth: "100%",
+                  bgcolor: footColor,
+                  minWidth: '100%',
                   minHeight: '8vh',
-                  marginLeft: '-16px', 
+                  marginLeft: '-16px',
                   marginRight: '-16px',
-                  marginBottom: '-8px', 
-                   paddingLeft: '30px',
-                   paddingTop: '10px',
-                   transition: 'background-color 0.5s ease'
+                  marginBottom: '-8px',
+                  paddingLeft: '30px',
+                  paddingTop: '10px',
+                  transition: 'background-color 0.5s ease',
                 }}
               >
                 <Button
@@ -282,7 +315,7 @@ export default function QuizScaffold({ questions, banners=null }) {
                       borderWidth: 2,
                       boxShadow: 'none',
                       backgroundColor: '#378803',
-                      zIndex: 1500,
+                      zIndex: 1200,
                     },
                   }}
                 >
@@ -326,7 +359,10 @@ export default function QuizScaffold({ questions, banners=null }) {
             overflow: 'hidden', // Prevents content overflow
           }}
         >
-         <SideBanner banners={banners.right} currentQuestion={currentQuestion}/>
+          <SideBanner
+            banners={banners.right}
+            currentQuestion={currentQuestion}
+          />
         </Box>
       </Grid>
     </Grid>
