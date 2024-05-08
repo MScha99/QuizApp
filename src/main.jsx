@@ -15,15 +15,15 @@ const router = createBrowserRouter([
   },
   {
     path: '/quizone',
-    element: <QuizScaffold questions={quizQuestions.questionsOne} banners={banners.QuizOne}/>,
+    element: <QuizScaffold questions={quizQuestions.questionsOne} banners={banners.QuizOne} module={'one'}/>,
   },
   {
     path: '/quiztwo',
-    element: <QuizScaffold questions={quizQuestions.questionsTwo} banners={banners.QuizTwo}/>,
+    element: <QuizScaffold questions={quizQuestions.questionsTwo} banners={banners.QuizTwo} module={'two'}/>,
   },
   {
     path: '/quizthree',
-    element: <QuizScaffold questions={quizQuestions.questionsThree} banners={banners.QuizThree}/>,
+    element: <QuizScaffold questions={quizQuestions.questionsThree} banners={banners.QuizThree} module={'three'}/>,
   },
 
   {

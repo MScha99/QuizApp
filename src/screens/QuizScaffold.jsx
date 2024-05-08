@@ -22,6 +22,7 @@ export default function QuizScaffold({
   questions,
   banners = null,
   popups = false,
+  module
 }) {
   let quizTime = 600
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -246,7 +247,7 @@ export default function QuizScaffold({
                     }}
                   >
                     <HomeDialog />
-                    <GuidebookDialog />
+                    <GuidebookDialog  module={module}/>
                   </Box>
 
                   <AdvertPopup
