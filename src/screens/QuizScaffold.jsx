@@ -24,8 +24,7 @@ export default function QuizScaffold({
   popups = false,
   module
 }) {
-  // let quizTime = 600
-  let quizTime = 2
+  let quizTime = 600
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answerIndex, setAnswerIndex] = useState(null)
   const [answer, setAnswer] = useState(null)
