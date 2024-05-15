@@ -24,7 +24,8 @@ export default function QuizScaffold({
   popups = false,
   module
 }) {
-  let quizTime = 600
+  // let quizTime = 600
+  let quizTime = 2
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answerIndex, setAnswerIndex] = useState(null)
   const [answer, setAnswer] = useState(null)
@@ -65,17 +66,17 @@ export default function QuizScaffold({
     console.log('correctanswer: ', { correctAnswer })
     setResult((prev) =>
       answer === correctAnswer
-        ? (setFootColor('lightgreen'),
-          {
-            ...prev,
-            score: prev.score + 1,
-            correctAnswers: prev.correctAnswers + 1,
-          })
-        : (setFootColor('red'),
-          {
-            ...prev,
-            wrongAnswers: prev.wrongAnswers + 1,
-          })
+        ? (setFootColor('#89E219'),
+        {
+          ...prev,
+          score: prev.score + 1,
+          correctAnswers: prev.correctAnswers + 1,
+        })
+        : (setFootColor('#FF4B4B'),
+        {
+          ...prev,
+          wrongAnswers: prev.wrongAnswers + 1,
+        })
     )
     setTimeout(() => {
       if (currentQuestion !== questions.length - 1) {
@@ -172,7 +173,8 @@ export default function QuizScaffold({
           sx={{
             bgcolor: 'white',
             border: 2,
-            borderRadius: 12,
+            padding: '40px',
+            borderRadius: '40px',
             borderColor: '#E5E5E5',
             minHeight: '76vh',
             maxHeight: '76vh',
@@ -247,7 +249,7 @@ export default function QuizScaffold({
                     }}
                   >
                     <HomeDialog />
-                    <GuidebookDialog  module={module}/>
+                    <GuidebookDialog module={module} />
                   </Box>
 
                   <AdvertPopup
@@ -282,10 +284,10 @@ export default function QuizScaffold({
                   bgcolor: footColor,
                   minWidth: '100%',
                   minHeight: '8vh',
-                  marginLeft: '-16px',
-                  marginRight: '-16px',
-                  marginBottom: '-8px',
-                  paddingLeft: '30px',
+                  marginLeft: '-40px',
+                  marginRight: '-40px',
+                  marginBottom: '-40px',
+                  paddingLeft: '40px',
                   paddingTop: '10px',
                   transition: 'background-color 0.5s ease',
                 }}
@@ -297,6 +299,11 @@ export default function QuizScaffold({
                   disabled={answerIndex === null}
                   size='large'
                   sx={{
+                    borderRadius: '12px',
+                    paddingTop: '10px',
+                    paddinLeft: '18px',
+                    paggingRight: '18px',
+                    paddingBottom: '10px',
                     fontSize: '16px',
                     lineHeight: '22px',
                     fontFamily: 'Inter, sans-serif',
@@ -306,7 +313,7 @@ export default function QuizScaffold({
                     boxShadow: 'none',
                     borderWidth: 2,
                     borderColor: '#E5E5E5',
-                    zIndex: 1500,
+                    zIndex: 500,
                     ':hover': {
                       borderWidth: 2,
                       boxShadow: 'none',
@@ -316,7 +323,6 @@ export default function QuizScaffold({
                       borderWidth: 2,
                       boxShadow: 'none',
                       backgroundColor: '#378803',
-                      zIndex: 1200,
                     },
                   }}
                 >
@@ -326,20 +332,83 @@ export default function QuizScaffold({
             </div>
           ) : (
             <div>
-              <h3>Wyniki</h3>
-              <p>Punkty: {result.score}</p>
-              <p>Poprawne odpowiedzi: {result.correctAnswers}</p>
-              <p>Błędne odpowiedzi: {result.wrongAnswers}</p>
-              <p>Upłynięty czas: {elapsedTime} s</p>
-
+              <Typography
+                sx={{
+                  fontSize: '24px',
+                  lineHeight: '30px',
+                  color: '#000000',
+                  fontWeight: 'bold',
+                  fontFamily: 'Inter, sans-serif',
+                  marginBottom: '24px',
+                }}
+              >
+                Wyniki
+              </Typography>
+              <Typography sx={{
+                fontSize: "20px",
+                color: "#777777",
+                fontWeight: "normal",
+                fontFamily: "Inter, sans-serif"
+              }}>
+                Punkty: {result.score}
+              </Typography>
+              <Typography sx={{
+                fontSize: "20px",
+                color: "#777777",
+                fontWeight: "normal",
+                fontFamily: "Inter, sans-serif"
+              }}>
+                Poprawne odpowiedzi: {result.correctAnswers}
+              </Typography><Typography sx={{
+                fontSize: "20px",
+                color: "#777777",
+                fontWeight: "normal",
+                fontFamily: "Inter, sans-serif"
+              }}>
+                Błędne odpowiedzi: {result.wrongAnswers}
+              </Typography><Typography sx={{
+                fontSize: "20px",
+                color: "#777777",
+                fontWeight: "normal",
+                fontFamily: "Inter, sans-serif"
+              }}>
+                Całkowity czas: {elapsedTime} s
+              </Typography>
               <Link to='/'>
-                <button
-                  onClick={() => {
-                    exportResultsToFile()
+                <Button
+                  variant='contained'
+                  onClick={exportResultsToFile()}
+                  size='large'
+                  sx={{
+                    marginTop: '24px',
+                    borderRadius: '12px',
+                    paddingTop: '10px',
+                    paddinLeft: '18px',
+                    paggingRight: '18px',
+                    paddingBottom: '10px',
+                    fontSize: '16px',
+                    lineHeight: '22px',
+                    fontFamily: 'Inter, sans-serif',
+                    color: '#FFFFFF',
+                    backgroundColor: '#1CB0F6',
+                    textTransform: 'none',
+                    boxShadow: 'none',
+                    borderWidth: 2,
+                    borderColor: '#E5E5E5',
+                    ':hover': {
+                      borderWidth: 2,
+                      boxShadow: 'none',
+                      backgroundColor: '#0083CB',
+                    },
+                    ':active': {
+                      borderWidth: 2,
+                      boxShadow: 'none',
+                      backgroundColor: '#0068A4',
+                    },
                   }}
                 >
-                  Zakończ moduł
-                </button>
+                  Zakończ
+                </Button>
               </Link>
             </div>
           )}

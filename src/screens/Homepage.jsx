@@ -45,19 +45,25 @@ const Homepage = () => {
           <Button
             variant='outlined'
             sx={{
-              fontSize: '16px',
-              lineHeight: '22px',
-              fontFamily: 'Inter, sans-serif',
-              color: '#4B4B4B',
-              textTransform: 'none',
-              boxShadow: 'none',
+              borderRadius: '12px',
+              paddingTop: '8px',
+              paddinLeft: '16px',
+              paggingRight: '16px',
+              paddingBottom: '8px',
+              marginBottom: '8px',
+              fontSize: "20px",
+              fontFamily: "Inter, sans-serif",
+              color: "#4B4B4B",
+              textTransform: "none",
+              boxShadow: "none",
               borderWidth: 2,
-              borderColor: '#E5E5E5',
-              marginBottom: '16px',
               width: '20vw',
-              ':hover': {
-                borderWidth: 2,
-              },
+              borderColor: "#E5E5E5",
+              ":hover": {
+                  borderWidth: 2,
+                  borderColor: "#1CB0F6",
+                  backgroundColor: '#E3F5FE',
+              }
             }}
           >
             Odpoczynek pomiędzy modułami
@@ -70,19 +76,25 @@ const Homepage = () => {
           <Button
             variant='outlined'
             sx={{
-              fontSize: '16px',
-              lineHeight: '22px',
-              fontFamily: 'Inter, sans-serif',
-              color: '#4B4B4B',
-              textTransform: 'none',
-              boxShadow: 'none',
+              borderRadius: '12px',
+              paddingTop: '8px',
+              paddinLeft: '16px',
+              paggingRight: '16px',
+              paddingBottom: '8px',
+              marginBottom: '8px',
+              fontSize: "20px",
+              fontFamily: "Inter, sans-serif",
+              color: "#4B4B4B",
+              textTransform: "none",
+              boxShadow: "none",
               borderWidth: 2,
-              borderColor: '#E5E5E5',
-              marginBottom: '16px',
               width: '20vw',
-              ':hover': {
-                borderWidth: 2,
-              },
+              borderColor: "#E5E5E5",
+              ":hover": {
+                  borderWidth: 2,
+                  borderColor: "#1CB0F6",
+                  backgroundColor: '#E3F5FE',
+              }
             }}
           >
             Rozpocznij pierwszy moduł
@@ -92,19 +104,25 @@ const Homepage = () => {
           <Button
             variant='outlined'
             sx={{
-              fontSize: '16px',
-              lineHeight: '22px',
-              fontFamily: 'Inter, sans-serif',
-              color: '#4B4B4B',
-              textTransform: 'none',
-              boxShadow: 'none',
+              borderRadius: '12px',
+              paddingTop: '8px',
+              paddinLeft: '16px',
+              paggingRight: '16px',
+              paddingBottom: '8px',
+              marginBottom: '8px',
+              fontSize: "20px",
+              fontFamily: "Inter, sans-serif",
+              color: "#4B4B4B",
+              textTransform: "none",
+              boxShadow: "none",
               borderWidth: 2,
-              borderColor: '#E5E5E5',
-              marginBottom: '16px',
               width: '20vw',
-              ':hover': {
-                borderWidth: 2,
-              },
+              borderColor: "#E5E5E5",
+              ":hover": {
+                  borderWidth: 2,
+                  borderColor: "#1CB0F6",
+                  backgroundColor: '#E3F5FE',
+              }
             }}
           >
             Rozpocznij drugi moduł
@@ -114,19 +132,25 @@ const Homepage = () => {
           <Button
             variant='outlined'
             sx={{
-              fontSize: '16px',
-              lineHeight: '22px',
-              fontFamily: 'Inter, sans-serif',
-              color: '#4B4B4B',
-              textTransform: 'none',
-              boxShadow: 'none',
+              borderRadius: '12px',
+              paddingTop: '8px',
+              paddinLeft: '16px',
+              paggingRight: '16px',
+              paddingBottom: '8px',
+              marginBottom: '8px',
+              fontSize: "20px",
+              fontFamily: "Inter, sans-serif",
+              color: "#4B4B4B",
+              textTransform: "none",
+              boxShadow: "none",
               borderWidth: 2,
-              borderColor: '#E5E5E5',
-              marginBottom: '16px',
               width: '20vw',
-              ':hover': {
-                borderWidth: 2,
-              },
+              borderColor: "#E5E5E5",
+              ":hover": {
+                  borderWidth: 2,
+                  borderColor: "#1CB0F6",
+                  backgroundColor: '#E3F5FE',
+              }
             }}
           >
             Rozpocznij trzeci moduł
