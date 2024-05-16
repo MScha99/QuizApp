@@ -58,13 +58,48 @@ export default function QuizScaffold({
   }
 
   //update scores when user moves to next question; display results after last question
+  // const onClickNext = () => {
+  //   setAnswerIndex(null)
+  //   setSentence([])
+  //   console.log('answer: ', { answer })
+  //   console.log('correctanswer: ', { correctAnswer })
+  //   setResult((prev) =>
+  //     answer === correctAnswer
+  //       ? (setFootColor('#89E219'),
+  //       {
+  //         ...prev,
+  //         score: prev.score + 1,
+  //         correctAnswers: prev.correctAnswers + 1,
+  //       })
+  //       : (setFootColor('#FF4B4B'),
+  //       {
+  //         ...prev,
+  //         wrongAnswers: prev.wrongAnswers + 1,
+  //       })
+  //   )
+  //   setTimeout(() => {
+  //     if (currentQuestion !== questions.length - 1) {
+  //       setCurrentQuestion((prev) => prev + 1)
+  //     } else {
+  //       setElapsedTime(quizTime - counter)
+  //       setShowResult(true)
+  //     }
+  //     setFootColor('white')
+  //     setAnswerIndex(null)
+  //     const actionTime = new Date()
+  //     setActionTimes((prevTimes) => [...prevTimes, actionTime])
+  //   }, 800)
+  // }
+
   const onClickNext = () => {
     setAnswerIndex(null)
     setSentence([])
     console.log('answer: ', { answer })
     console.log('correctanswer: ', { correctAnswer })
+    console.log('answer lowercase: ',  answer.trim().toLowerCase() )
+    console.log('correctanswer lowercase: ', correctAnswer.trim().toLowerCase())
     setResult((prev) =>
-      answer === correctAnswer
+      answer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()
         ? (setFootColor('#89E219'),
         {
           ...prev,
@@ -90,6 +125,7 @@ export default function QuizScaffold({
       setActionTimes((prevTimes) => [...prevTimes, actionTime])
     }, 800)
   }
+
 
   const exportResultsToFile = () => {
     const actionTimesFormatted = actionTimes.map(

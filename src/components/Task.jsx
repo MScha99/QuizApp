@@ -95,20 +95,21 @@ const Task = ({
                   paddinLeft: '16px',
                   paggingRight: '16px',
                   paddingBottom: '8px',
-                  color: answerIndex === index ? "#2B70C9" : '#4B4B4B',
+                  color: answerIndex === index ? '#2B70C9' : '#4B4B4B',
                   fontSize: '20px',
                   fontFamily: 'Inter, sans-serif',
-                  textTransform: "none",
+                  textTransform: 'none',
                   marginBottom: '8px',
                   width: '480px',
                   borderWidth: 2,
-                  backgroundColor: answerIndex === index ? "#E3F5FE" : 'transparent',
-                  borderColor: answerIndex === index ? "#1CB0F6" : '#E5E5E5',
-                  boxShadow: "none",
+                  backgroundColor:
+                    answerIndex === index ? '#E3F5FE' : 'transparent',
+                  borderColor: answerIndex === index ? '#1CB0F6' : '#E5E5E5',
+                  boxShadow: 'none',
                   ':hover': {
                     borderWidth: 2,
                     boxShadow: 'none',
-                    borderColor: answerIndex === index ? "#2B70C9" : '#1CB0F6',
+                    borderColor: answerIndex === index ? '#2B70C9' : '#1CB0F6',
                     backgroundColor: '#E3F5FE',
                   },
                   ':active': {
@@ -117,7 +118,7 @@ const Task = ({
                     borderColor: '1CB0F6',
                     backgroundColor: '#CAECFD',
                     zIndex: 1200,
-                  }
+                  },
                 }}
               >
                 {choice}
@@ -239,7 +240,7 @@ const Task = ({
                   setSentence((prevSentence) => [...prevSentence, choice])
                 }}
                 disabled={sentence.includes(choice)}
-                size="large"
+                size='large'
                 sx={{
                   borderRadius: '12px',
                   paddingTop: '8px',
@@ -247,9 +248,9 @@ const Task = ({
                   paggingRight: '16px',
                   paddingBottom: '8px',
                   marginTop: '4px',
-                            marginLeft: '4px',
-                            marginRight: '4px',
-                            marginBottom: '4px',
+                  marginLeft: '4px',
+                  marginRight: '4px',
+                  marginBottom: '4px',
                   color: '#4B4B4B',
                   fontSize: '20px',
                   fontFamily: 'Inter, sans-serif',
@@ -258,7 +259,7 @@ const Task = ({
                   textTransform: 'none',
                   ':hover': {
                     backgroundColor: '#E3F5FE',
-                    border: 'solid 2px #E5E5E5',
+                    // border: 'solid 2px #E5E5E5',
                     border: '2px solid #1CB0F6',
                   },
                   ':disabled': {
