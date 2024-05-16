@@ -27,8 +27,16 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/relaxation',
-    element: <Relaxation/>,
+    path: '/relaxone',
+    element: <Relaxation module={'one'}/>,
+  },
+  {
+    path: '/relaxtwo',
+    element: <Relaxation module={'two'}/>,
+  },
+  {
+    path: '/relaxthree',
+    element: <Relaxation module={'three'}/>,
   },
 ])
 

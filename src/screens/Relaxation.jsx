@@ -4,7 +4,31 @@ import { Link } from 'react-router-dom'
 import { Button, Box, Typography, Unstable_Grid2 as Grid } from '@mui/material'
 import HomeIcon from '@mui/icons-material/Home'
 
-const Relaxation = () => {
+const Relaxation = ({ module = 'one' }) => {
+  let videoSource = ''
+  let videoTitle = ''
+
+  // Determine video source and title based on the module value
+  switch (module) {
+    case 'one':
+      videoSource = 'media/video/fish-clip1.mp4'
+      videoTitle = 'Po module pierwszym'
+      break
+    case 'two':
+      videoSource = 'media/video/fish-clip2.mp4'
+      videoTitle = 'Po module drugim'
+      break
+    case 'three':
+      videoSource = 'media/video/fish-clip3.mp4'
+      videoTitle = 'Po module trzecim'
+      break
+    default:
+      // Default case: handle if module value does not match any specific case
+      videoSource = '' // Set to an empty string or a default video source
+      videoTitle = 'Invalid module' // Display an error message
+      break
+  }
+
   return (
     <Box
       sx={{
@@ -37,7 +61,6 @@ const Relaxation = () => {
                 size='large'
                 sx={{
                   marginTop: 1,
-                  // marginRight: 1,
                   fontSize: '16px',
                   lineHeight: '22px',
                   fontFamily: 'Inter, sans-serif',
@@ -73,6 +96,7 @@ const Relaxation = () => {
             </Typography>
           </Grid>
         </Grid>
+
         <Typography
           sx={{
             fontSize: '24px',
@@ -86,59 +110,32 @@ const Relaxation = () => {
             marginTop: 3,
           }}
         >
-          Po module pierwszym
+          {videoTitle}
         </Typography>
-        <Box sx={{ marginTop: 5, marginBottom: 5 }}>
-          <video width='854' height='480' controls>
-            <source src='media/video/fish-clip1.mp4' type='video/mp4' />
-            Your browser does not support the video tag.
-          </video>
-        </Box>
-        <Typography
-          sx={{
-            fontSize: '24px',
-            lineHeight: '30px',
-            color: '#000000',
-            fontWeight: 'bold',
-            fontFamily: 'Inter, sans-serif',
-            marginBottom: '24px',
-            maxWidth: '100%',
-            textAlign: 'center',
-          }}
-        >
-          Po module drugim
-        </Typography>
-        <Box sx={{ marginTop: 5, marginBottom: 5 }}>
-          <video width='854' height='480' controls>
-            <source src='media/video/fish-clip2.mp4' type='video/mp4' />
-            Your browser does not support the video tag.
-          </video>
-        </Box>
 
-        <Typography
-          sx={{
-            fontSize: '24px',
-            lineHeight: '30px',
-            color: '#000000',
-            fontWeight: 'bold',
-            fontFamily: 'Inter, sans-serif',
-            marginBottom: '24px',
-            maxWidth: '100%',
-            textAlign: 'center',
-          }}
-        >
-          Po module trzecim
-        </Typography>
-        <Box sx={{ marginTop: 5, marginBottom: 5 }}>
-          <video width='854' height='480' controls>
-            <source src='media/video/fish-clip3.mp4' type='video/mp4' />
-            Your browser does not support the video tag.
-          </video>
-          <p>
-            &quot;Underwater World 8K ULTRA HD – Marine Life, Sea Animals and
-            Coral Reef &quot; YouTube, 8k VIDEOS HDR, 17.12.2021{' '}
-          </p>
-        </Box>
+        {videoSource && ( // Render video if videoSource is not empty
+          <Box sx={{ marginTop: 5, marginBottom: 5 }}>
+            <video width='854' height='480' controls>
+              <source src={videoSource} type='video/mp4' />
+              Your browser does not support the video tag.
+            </video>
+          </Box>
+        )}
+
+        {!videoSource && ( // Render message if videoSource is empty (invalid module)
+          <Typography
+            sx={{
+              fontSize: '18px',
+              lineHeight: '24px',
+              color: '#FF0000',
+              fontFamily: 'Inter, sans-serif',
+              textAlign: 'center',
+              marginTop: 5,
+            }}
+          >
+            Invalid module selected.
+          </Typography>
+        )}
       </Box>
     </Box>
   )

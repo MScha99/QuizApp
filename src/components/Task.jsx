@@ -87,9 +87,39 @@ const Task = ({
               <Button
                 key={choice}
                 onClick={() => onAnswerClick(choice, index)}
-                variant={answerIndex === index ? 'contained' : 'outlined'}
-                color='primary'
-                sx={{ marginBottom: '16px', width: '480px' }}
+                variant='outlined'
+                size='large'
+                sx={{
+                  borderRadius: '12px',
+                  paddingTop: '8px',
+                  paddinLeft: '16px',
+                  paggingRight: '16px',
+                  paddingBottom: '8px',
+                  color: answerIndex === index ? '#2B70C9' : '#4B4B4B',
+                  fontSize: '20px',
+                  fontFamily: 'Inter, sans-serif',
+                  textTransform: 'none',
+                  marginBottom: '8px',
+                  width: '480px',
+                  borderWidth: 2,
+                  backgroundColor:
+                    answerIndex === index ? '#E3F5FE' : 'transparent',
+                  borderColor: answerIndex === index ? '#1CB0F6' : '#E5E5E5',
+                  boxShadow: 'none',
+                  ':hover': {
+                    borderWidth: 2,
+                    boxShadow: 'none',
+                    borderColor: answerIndex === index ? '#2B70C9' : '#1CB0F6',
+                    backgroundColor: '#E3F5FE',
+                  },
+                  ':active': {
+                    borderWidth: 2,
+                    boxShadow: 'none',
+                    borderColor: '1CB0F6',
+                    backgroundColor: '#CAECFD',
+                    zIndex: 1200,
+                  },
+                }}
               >
                 {choice}
               </Button>
@@ -110,7 +140,7 @@ const Task = ({
               marginBottom: '24px',
             }}
           >
-            Wybierz poprawną odpowiedź
+            Ułóż zdanie
           </Typography>
           <Typography
             sx={{
@@ -134,10 +164,10 @@ const Task = ({
                   sx={{
                     display: 'flex',
                     justifyContent: 'center',
-                    borderTop: 1,
-                    borderBottom: 1,
+                    borderTop: 2,
+                    borderBottom: 2,
                     minHeight: 70,
-                    borderColor: '#d6d6d6',
+                    borderColor: '#E5E5E5',
                   }}
                   {...provided.droppableProps}
                   ref={provided.innerRef}
@@ -148,15 +178,29 @@ const Task = ({
                         <Box
                           className='draggable-words'
                           sx={{
-                            borderRadius: '5px',
-                            margin: 1,
-                            padding: 2,
-                            backgroundColor: '#fefdff',
-                            border: '6px solid #d6d6d6',
+                            fontSize: '20px',
+                            color: '#4B4B4B',
+                            fontFamily: 'Inter, sans-serif',
+                            fontWeight: '500',
+                            borderRadius: '12px',
+                            paddingTop: '8px',
+                            paddinLeft: '16px',
+                            paggingRight: '16px',
+                            paddingBottom: '8px',
+                            marginTop: '8px',
+                            marginLeft: '4px',
+                            marginRight: '4px',
+                            marginBottom: '8px',
+                            paddingLeft: '12px',
+                            paddingRight: '12px',
+                            alignContent: 'center',
+                            backgroundColor: 'white',
+                            border: '2px solid #E5E5E5',
                             display: 'inline-block',
                             ':hover': {
-                              backgroundColor: '#4e487e',
-                              color: '#f7f6f6',
+                              backgroundColor: '#E3F5FE',
+                              color: '#4B4B4B',
+                              border: '2px solid #1CB0F6',
                             },
                           }}
                           {...provided.draggableProps}
@@ -174,12 +218,11 @@ const Task = ({
               )}
             </Droppable>
           </DragDropContext>
-
           <Box
             className='choices-container'
             sx={{
-              marginTop: '50px',
-              marginBottom: '50px',
+              marginTop: '36px',
+              marginBottom: '36px',
               marginLeft: 'auto',
               marginRight: 'auto',
               // maxWidth: '400px',
@@ -197,28 +240,37 @@ const Task = ({
                   setSentence((prevSentence) => [...prevSentence, choice])
                 }}
                 disabled={sentence.includes(choice)}
+                size='large'
                 sx={{
-                  backgroundColor: '#fefdff',
-                  border: 'solid 6px #d6d6d6',
-                  margin: '5px',
+                  borderRadius: '12px',
+                  paddingTop: '8px',
+                  paddinLeft: '16px',
+                  paggingRight: '16px',
+                  paddingBottom: '8px',
+                  marginTop: '4px',
+                  marginLeft: '4px',
+                  marginRight: '4px',
+                  marginBottom: '4px',
+                  color: '#4B4B4B',
+                  fontSize: '20px',
+                  fontFamily: 'Inter, sans-serif',
+                  backgroundColor: 'transparent',
+                  border: 'solid 2px #E5E5E5',
                   textTransform: 'none',
-
                   ':hover': {
-                    backgroundColor: '#4e487e',
-                    border: 'solid 6px #d6d6d6',
-                    color: '#f7f6f6',
+                    backgroundColor: '#E3F5FE',
+                    // border: 'solid 2px #E5E5E5',
+                    border: '2px solid #1CB0F6',
                   },
-
                   ':disabled': {
-                    backgroundColor: '#d6d6d6',
-                    border: 'solid 6px #d6d6d6',
-                    color: '#d6d6d6',
+                    backgroundColor: '#E5E5E5',
+                    border: 'solid 2px #E5E5E5',
+                    color: '#E5E5E5',
                   },
-
                   ':disabled:hover': {
-                    backgroundColor: '#d6d6d6',
-                    border: 'solid 6px #d6d6d6',
-                    color: '#d6d6d6',
+                    backgroundColor: '#E5E5E5',
+                    border: 'solid 2px #E5E5E5',
+                    color: '#E5E5E5',
                   },
                 }}
               >

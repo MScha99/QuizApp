@@ -24,64 +24,76 @@ export default function GuidebookDialog({ module = ' ' }) {
   switch (module) {
     case 'one':
       dialogContentText = (
-        <DialogContentText id='alert-dialog-description'>
-          Terve! Kuka sinä olet? - Cześć! Kim jesteś?
+        <DialogContentText
+          id='alert-dialog-description'
+          sx={{
+            fontSize: '20px',
+            fontFamily: "Inter, sans-serif",
+          }}
+        >
+          <b>Terve! Kuka sinä olet?</b> - Cześć! Kim jesteś?
           <br />
-          Minä olen Elsa. - Jestem Elsa.
+          <b>Minä olen Elsa.</b> - Jestem Elsa.
           <br />
-          Anteeksi, kuka sinä olet? - Przepraszam, kim jesteś?
+          <b>Anteeksi, kuka sinä olet?</b> - Przepraszam, kim jesteś?
           <br />
-          Minä olen Otso. - Jestem Otso.
+          <b>Minä olen Otso.</b> - Jestem Otso.
           <br />
-          Tervetuloa! - Witam!
+          <b>Tervetuloa!</b> - Witam!
           <br />
-          Jee! Onnea! - Jej! Powodzenia!
+          <b>Jee! Onnea!</b> - Jej! Powodzenia!
           <br />
-          Liisa, sinä olet hauska. - Liisa, jesteś zabawna.
+          <b>Liisa, sinä olet hauska.</b> - Liisa, jesteś zabawna.
           <br />
-          Kippis ja paljon onnea! - Na zdrowie i gratulacje!
+          <b>Kippis ja paljon onnea!</b> - Na zdrowie i gratulacje!
           <br />
-          Elsa on nainen. - Elsa jest kobietą.
+          <b>Elsa on nainen.</b> - Elsa jest kobietą.
           <br />
-          Väinö on mies. - Väinö jest mężczyzną.
+          <b>Väinö on mies.</b> - Väinö jest mężczyzną.
           <br />
-          Anteeksi, kuka hän on? - Przepraszam, kim ona jest?
+          <b>Anteeksi, kuka hän on?</b> - Przepraszam, kim ona jest?
           <br />
-          Hän on lapsi. - Ona jest dzieckiem.
+          <b>Hän on lapsi.</b> - Ona jest dzieckiem.
           <br />
-          Sinä olet todella komea. - Jesteś naprawde przystojny.
+          <b>Sinä olet todella komea.</b> - Jesteś naprawde przystojny.
           <br />
-          Suomi on aina kaunis. - Finlandia jest zawsze piękna. <br />
+          <b>Suomi on aina kaunis.</b> - Finlandia jest zawsze piękna. <br />
         </DialogContentText>
       )
       break
 
     case 'two':
       dialogContentText = (
-        <DialogContentText id='alert-dialog-description'>
-          Tämä on hyvä sauna. - To jest dobra sauna.
+        <DialogContentText
+          id='alert-dialog-description'
+          sx={{
+            fontSize: '20px',
+            fontFamily: "Inter, sans-serif",
+          }}
+        >
+          <b>Tämä on hyvä sauna.</b> - To jest dobra sauna.
           <br />
-          Hilla on hiljainen tyttö. - Hilla jest cichą dziewczyną.
+          <b>Hilla on hiljainen tyttö.</b> - Hilla jest cichą dziewczyną.
           <br />
-          Olet mukava poika. - Jesteś dobrym chłopakiem.
+          <b>Olet mukava poika.</b> - Jesteś dobrym chłopakiem.
           <br />
-          Olet rehellinen nainen. - Jesteś szczerą kobietą.
+          <b>Olet rehellinen nainen.</b> - Jesteś szczerą kobietą.
           <br />
-          Millainen koira se on? - Jakiego rodzaju to jest pies?
+          <b>Millainen koira se on?</b> - Jakiego rodzaju to jest pies?
           <br />
-          Minulla on pupu. - Ja mam zajączka.
+          <b>Minulla on pupu.</b> - Ja mam zajączka.
           <br />
-          Se on pieni ja kiltti. - To jest małe i miłe.
+          <b>Se on pieni ja kiltti.</b> - To jest małe i miłe.
           <br />
-          Tämä kissa on tuhma! - Ten kot jest niegrzeczny.
+          <b>Tämä kissa on tuhma!</b> - Ten kot jest niegrzeczny.
           <br />
-          Hänellä on sininen käärme. - Ona ma niebieskiego węża.
+          <b>Hänellä on sininen käärme.</b> - Ona ma niebieskiego węża.
           <br />
-          Millainen maa Viro on? - Jakim krajem jest Estonia?
+          <b>Millainen maa Viro on?</b> - Jakim krajem jest Estonia?
           <br />
-          Viro on pieni ja kaunis. - Estonia jest mała i piękna.
+          <b>Viro on pieni ja kaunis.</b> - Estonia jest mała i piękna.
           <br />
-          Onko Ruotsi kylmä maa? - Czy Szwecja jest zimnym krajem?
+          <b>Onko Ruotsi kylmä maa?</b> - Czy Szwecja jest zimnym krajem?
           <br />
         </DialogContentText>
       )
@@ -89,32 +101,38 @@ export default function GuidebookDialog({ module = ' ' }) {
 
     case 'three':
       dialogContentText = (
-        <DialogContentText id='alert-dialog-description'>
-          Missä kaupunki on? - Gdzie jest miasto?
+        <DialogContentText
+          id='alert-dialog-description'
+          sx={{
+            fontSize: '20px',
+            fontFamily: "Inter, sans-serif",
+          }}
+        >
+          <b>Missä kaupunki on?</b> - Gdzie jest miasto?
           <br />
-          Kaunis laulu on venäläinen. - Piękna piosenka jest rosyjska <br />
-          Oletteko te nyt pari? - Jesteście teraz parą?
+          <b>Kaunis laulu on venäläinen.</b> - Piękna piosenka jest rosyjska
           <br />
-          Me olemme naimisissa. - Jesteśmy małżeństwem.
+          <b>Oletteko te nyt pari?</b> - Jesteście teraz parą?
           <br />
-          Minä tanssin. - Ja tańcze.
+          <b>Me olemme naimisissa.</b> - Jesteśmy małżeństwem.
           <br />
-          He istuvat yhdessä. - Oni siedzą razem.
+          <b>Minä tanssin.</b> - Ja tańcze.
           <br />
-          Missä te seisotte? - Gdzie stoisz?
+          <b>He istuvat yhdessä.</b> - Oni siedzą razem.
           <br />
-          Sinä itket harvoin ja naurat usein. - Ty rzadko płaczesz i często się
-          śmiejesz.
+          <b>Missä te seisotte?</b> - Gdzie stoisz?
           <br />
-          Minulla on uusi lelu. - Mam nową zabawke.
+          <b>Sinä itket harvoin ja naurat usein.</b> - Ty rzadko płaczesz i często się śmiejesz.
           <br />
-          Sinulla on kaunis talo. - Ty masz piękny dom.
+          <b>Minulla on uusi lelu.</b> - Mam nową zabawke.
           <br />
-          Millainen sauna teillä on? - Jaką masz saune?
+          <b>Sinulla on kaunis talo.</b> - Ty masz piękny dom.
           <br />
-          Meillä on suuri sauna. - My mamy dużą saune.
+          <b>Millainen sauna teillä on?</b> - Jaką masz saune?
           <br />
-          Heillä on radio ja televisio. - Oni mają radio i telewizje.
+          <b>Meillä on suuri sauna.</b> - My mamy dużą saune.
+          <br />
+          <b>Heillä on radio ja televisio.</b> - Oni mają radio i telewizje.
           <br />
         </DialogContentText>
       )
@@ -133,6 +151,11 @@ export default function GuidebookDialog({ module = ' ' }) {
           size='large'
           startIcon={<InfoIcon />}
           sx={{
+            borderRadius: '12px',
+            paddingTop: '10px',
+            paddinLeft: '18px',
+            paggingRight: '18px',
+            paddingBottom: '10px',
             fontSize: '16px',
             lineHeight: '22px',
             fontFamily: 'Inter, sans-serif',
@@ -165,10 +188,31 @@ export default function GuidebookDialog({ module = ' ' }) {
         aria-labelledby='alert-dialog-title'
         aria-describedby='alert-dialog-description'
       >
-        <DialogTitle id='alert-dialog-title'>Słowniczek</DialogTitle>
-        <DialogContent>{dialogContentText}</DialogContent>
+        <DialogTitle
+          id='alert-dialog-title'
+          sx={{
+            fontSize: '24px',
+            fontFamily: "Inter, sans-serif",
+          }}
+        >
+          Słowniczek
+        </DialogTitle>
+        <DialogContent
+
+        >
+          {dialogContentText}
+        </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} autoFocus>
+          <Button
+            onClick={handleClose}
+            autoFocus
+            size='large'
+            sx={{
+              fontSize: '16px',
+              fontFamily: "Inter, sans-serif",
+              textTransform: "none",
+            }}
+          >
             OK
           </Button>
         </DialogActions>

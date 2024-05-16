@@ -1,5 +1,5 @@
 
-import { useState, Fragment} from 'react'
+import { useState, Fragment } from 'react'
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -29,6 +29,11 @@ export default function HomeDialog() {
                     onClick={handleClickOpen}
                     size="large"
                     sx={{
+                        borderRadius: '12px',
+                        paddingTop: '8px',
+                        paddinLeft: '16px',
+                        paggingRight: '16px',
+                        paddingBottom: '8px',
                         fontSize: "16px",
                         lineHeight: "22px",
                         fontFamily: "Inter, sans-serif",
@@ -39,6 +44,8 @@ export default function HomeDialog() {
                         borderColor: "#E5E5E5",
                         ":hover": {
                             borderWidth: 2,
+                            borderColor: "#1CB0F6",
+                            backgroundColor: '#E3F5FE',
                         }
                     }}
                 >
@@ -53,19 +60,49 @@ export default function HomeDialog() {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">
-                    Wrócić do ekranu głównego?
+                <DialogTitle
+                    id="alert-dialog-title"
+                    sx={{
+                        fontSize: '24px',
+                        fontFamily: "Inter, sans-serif",
+                    }}
+                >
+                    Wyjść do ekranu głównego?
                 </DialogTitle>
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        Wszystkie postępy zostaną niezapisane
+                    <DialogContentText
+                        id="alert-dialog-description"
+                        sx={{
+                            fontSize: '20px',
+                            fontFamily: "Inter, sans-serif",
+                        }}
+                    >
+                        Wszystkie postępy zostaną niezapisane.
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Anuluj</Button>
+                    <Button
+                        onClick={handleClose}
+                        size='large'
+                        sx={{
+                            fontSize: '16px',
+                            fontFamily: "Inter, sans-serif",
+                            textTransform: "none",
+                        }}
+                    >Anuluj
+                    </Button>
                     <Link to='/'>
-                        <Button onClick={handleClose} autoFocus>
-                            Wróć
+                        <Button
+                            onClick={handleClose}
+                            autoFocus
+                            size='large'
+                            sx={{
+                                fontSize: '16px',
+                                fontFamily: "Inter, sans-serif",
+                                textTransform: "none",
+                            }}
+                        >
+                            Wyjdź
                         </Button>
                     </Link>
                 </DialogActions>
