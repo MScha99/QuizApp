@@ -98,8 +98,8 @@ export const quizQuestions = {
       question: 'Kippis ja paljon onnea!',
       choices: [
         'Cześć',
-        'Jestem',
-        'Zdrowie',
+        'Na',
+        'zdrowie',
         'ja',
         'ona',
         'pije',
@@ -107,12 +107,12 @@ export const quizQuestions = {
         'powodzenia',
         'i',
       ],
-      correctAnswer: 'Zdrowie i powodzenia',
+      correctAnswer: 'Na zdrowie i powodzenia',
     },
 
     {
       type: 'create-sentence',
-      question: 'Zdrowie i powodzenia!',
+      question: 'Na zdrowie i powodzenia!',
       choices: [
         'ja',
         'Kippis',
@@ -178,9 +178,8 @@ export const quizQuestions = {
         'sinä',
         'olet',
         'Minä',
-        '',
       ],
-      correctAnswer: 'Minä olen Pyry',
+      correctAnswer: 'Minä olen Otso',
     },
 
     {
@@ -208,7 +207,7 @@ export const quizQuestions = {
       type: 'create-sentence',
       question: 'Przepraszam, kim ona jest?',
       choices: ['lapsi', 'kuka', 'on', 'Anteeksi', 'mies', 'hän', 'sinä'],
-      correctAnswer: 'Anteeksi, kuka hän on',
+      correctAnswer: 'Anteeksi kuka hän on',
     },
 
     {
@@ -319,7 +318,7 @@ export const quizQuestions = {
       type: 'create-sentence',
       question: 'Przepraszam, kim ona jest?',
       choices: ['lapsi', 'kuka', 'on', 'Anteeksi', 'mies', 'hän', 'sinä'],
-      correctAnswer: 'Anteeksi, kuka hän on',
+      correctAnswer: 'Anteeksi kuka hän on',
     },
 
     {
@@ -382,9 +381,8 @@ export const quizQuestions = {
         'sinä',
         'olet',
         'Minä',
-        '',
       ],
-      correctAnswer: 'Minä olen Pyry',
+      correctAnswer: 'Minä olen Otso',
     },
 
     {
@@ -423,8 +421,8 @@ export const quizQuestions = {
       question: 'Kippis ja paljon onnea!',
       choices: [
         'Cześć',
-        'Jestem',
-        'Zdrowie',
+        'Na',
+        'zdrowie',
         'ja',
         'ona',
         'pije',
@@ -432,7 +430,7 @@ export const quizQuestions = {
         'powodzenia',
         'i',
       ],
-      correctAnswer: 'Zdrowie i powodzenia',
+      correctAnswer: 'Na zdrowie i powodzenia',
     },
 
     {
@@ -595,7 +593,7 @@ export const quizQuestions = {
       question: 'Kippis ja paljon onnea!',
       choices: [
         'Cześć',
-        'Jestem',
+        'Na',
         'Zdrowie',
         'ja',
         'ona',
@@ -604,12 +602,12 @@ export const quizQuestions = {
         'powodzenia',
         'i',
       ],
-      correctAnswer: 'Zdrowie i powodzenia',
+      correctAnswer: 'Na zdrowie i powodzenia',
     },
 
     {
       type: 'create-sentence',
-      question: 'Zdrowie i powodzenia!',
+      question: 'Na zdrowie i powodzenia!',
       choices: [
         'ja',
         'Kippis',
@@ -675,9 +673,8 @@ export const quizQuestions = {
         'sinä',
         'olet',
         'Minä',
-        '',
       ],
-      correctAnswer: 'Minä olen Pyry',
+      correctAnswer: 'Minä olen Otso',
     },
 
     {
@@ -705,7 +702,7 @@ export const quizQuestions = {
       type: 'create-sentence',
       question: 'Przepraszam, kim ona jest?',
       choices: ['lapsi', 'kuka', 'on', 'Anteeksi', 'mies', 'hän', 'sinä'],
-      correctAnswer: 'Anteeksi, kuka hän on',
+      correctAnswer: 'Anteeksi kuka hän on',
     },
 
     {
@@ -816,7 +813,7 @@ export const quizQuestions = {
       type: 'create-sentence',
       question: 'Przepraszam, kim ona jest?',
       choices: ['lapsi', 'kuka', 'on', 'Anteeksi', 'mies', 'hän', 'sinä'],
-      correctAnswer: 'Anteeksi, kuka hän on',
+      correctAnswer: 'Anteeksi kuka hän on',
     },
 
     {
@@ -879,9 +876,8 @@ export const quizQuestions = {
         'sinä',
         'olet',
         'Minä',
-        '',
       ],
-      correctAnswer: 'Minä olen Pyry',
+      correctAnswer: 'Minä olen Otso',
     },
 
     {
@@ -920,8 +916,8 @@ export const quizQuestions = {
       question: 'Kippis ja paljon onnea!',
       choices: [
         'Cześć',
-        'Jestem',
-        'Zdrowie',
+        'Na',
+        'zdrowie',
         'ja',
         'ona',
         'pije',
@@ -929,7 +925,7 @@ export const quizQuestions = {
         'powodzenia',
         'i',
       ],
-      correctAnswer: 'Zdrowie i powodzenia',
+      correctAnswer: 'Na zdrowie i powodzenia',
     },
 
     {
@@ -1033,7 +1029,7 @@ export const quizQuestions = {
       question: 'cicha',
       choices: [
         'olmee',
-        'tanssin',
+        'hiljainen',
         'poika',
         'aina',
         'rehellinen',
@@ -1152,7 +1148,6 @@ export const quizQuestions = {
         'tyttö',
         'tuhma',
         'olemee',
-        'mukava',
       ],
       correctAnswer: 'tyttö',
     },
@@ -1268,7 +1263,6 @@ export const quizQuestions = {
         'poika',
         'aina',
         'rehellinen',
-        'lapsi',
         'maa',
         'tuhma',
       ],
@@ -1297,7 +1291,7 @@ export const quizQuestions = {
       type: 'create-sentence',
       question: 'Hänellä on sininen käärme',
       choices: [
-        'On',
+        'kot',
         'Dziecko',
         'czerwonego',
         'zajączka',
@@ -1392,7 +1386,6 @@ export const quizQuestions = {
       question: 'Ruotsi',
       choices: [
         'Estonia',
-        'Przepraszam',
         'wiem',
         'wąż',
         'pies',
@@ -1458,7 +1451,7 @@ export const quizQuestions = {
       question: 'cicha',
       choices: [
         'olmee',
-        'tanssin',
+        'hiljainen',
         'poika',
         'aina',
         'rehellinen',
@@ -1693,7 +1686,6 @@ export const quizQuestions = {
         'poika',
         'aina',
         'rehellinen',
-        'lapsi',
         'maa',
         'tuhma',
       ],
@@ -1722,7 +1714,7 @@ export const quizQuestions = {
       type: 'create-sentence',
       question: 'Hänellä on sininen käärme',
       choices: [
-        'On',
+        'kot',
         'Dziecko',
         'czerwonego',
         'zajączka',
@@ -1817,7 +1809,6 @@ export const quizQuestions = {
       question: 'Ruotsi',
       choices: [
         'Estonia',
-        'Przepraszam',
         'wiem',
         'wąż',
         'pies',
@@ -1907,7 +1898,6 @@ export const quizQuestions = {
         'poika',
         'aina',
         'rehellinen',
-        'lapsi',
         'maa',
         'tuhma',
       ],
@@ -1936,7 +1926,7 @@ export const quizQuestions = {
       type: 'create-sentence',
       question: 'Hänellä on sininen käärme',
       choices: [
-        'On',
+        'kot',
         'Dziecko',
         'czerwonego',
         'zajączka',
@@ -2031,7 +2021,6 @@ export const quizQuestions = {
       question: 'Ruotsi',
       choices: [
         'Estonia',
-        'Przepraszam',
         'wiem',
         'wąż',
         'pies',
@@ -2097,7 +2086,7 @@ export const quizQuestions = {
       question: 'cicha',
       choices: [
         'olmee',
-        'tanssin',
+        'hiljainen',
         'poika',
         'aina',
         'rehellinen',
@@ -2216,7 +2205,6 @@ export const quizQuestions = {
         'tyttö',
         'tuhma',
         'olemee',
-        'mukava',
       ],
       correctAnswer: 'tyttö',
     },
@@ -2332,7 +2320,6 @@ export const quizQuestions = {
         'poika',
         'aina',
         'rehellinen',
-        'lapsi',
         'maa',
         'tuhma',
       ],
@@ -2361,7 +2348,7 @@ export const quizQuestions = {
       type: 'create-sentence',
       question: 'Hänellä on sininen käärme',
       choices: [
-        'On',
+        'kot',
         'Dziecko',
         'czerwonego',
         'zajączka',
@@ -2494,7 +2481,6 @@ export const quizQuestions = {
         'talo',
         'yhdessä',
         'usein',
-        'istuvat',
         'olen',
         'olemee',
         'lapsi',
@@ -2696,7 +2682,7 @@ export const quizQuestions = {
         'teraz',
         'piękny',
         'mały',
-        'nowy',
+        'kot',
         'dom',
         'starą',
         'nowa',
@@ -2712,7 +2698,7 @@ export const quizQuestions = {
         'wiem',
         'telewizja',
         'Ty',
-        'piękne',
+        'dwa',
         'dom',
         'piękny',
         'masz',
@@ -2937,7 +2923,7 @@ export const quizQuestions = {
         'teraz',
         'piękny',
         'mały',
-        'nowy',
+        'kot',
         'dom',
         'starą',
         'nowa',
@@ -2969,7 +2955,7 @@ export const quizQuestions = {
         'wiem',
         'telewizja',
         'Ty',
-        'piękne',
+        'dwa',
         'dom',
         'piękny',
         'masz',
@@ -3320,7 +3306,7 @@ export const quizQuestions = {
         'teraz',
         'piękny',
         'mały',
-        'nowy',
+        'kot',
         'dom',
         'starą',
         'nowa',
@@ -3336,7 +3322,7 @@ export const quizQuestions = {
         'wiem',
         'telewizja',
         'Ty',
-        'piękne',
+        'dwa',
         'dom',
         'piękny',
         'masz',
@@ -3593,7 +3579,7 @@ export const quizQuestions = {
         'wiem',
         'telewizja',
         'Ty',
-        'piękne',
+        'dwa',
         'dom',
         'piękny',
         'masz',
@@ -3944,7 +3930,7 @@ export const quizQuestions = {
         'teraz',
         'piękny',
         'mały',
-        'nowy',
+        'kot',
         'dom',
         'starą',
         'nowa',
@@ -3960,7 +3946,7 @@ export const quizQuestions = {
         'wiem',
         'telewizja',
         'Ty',
-        'piękne',
+        'dwa',
         'dom',
         'piękny',
         'masz',
@@ -4185,7 +4171,7 @@ export const quizQuestions = {
         'teraz',
         'piękny',
         'mały',
-        'nowy',
+        'kot',
         'dom',
         'starą',
         'nowa',
@@ -4217,7 +4203,7 @@ export const quizQuestions = {
         'wiem',
         'telewizja',
         'Ty',
-        'piękne',
+        'dwa',
         'dom',
         'piękny',
         'masz',
