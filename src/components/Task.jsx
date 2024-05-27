@@ -46,7 +46,7 @@ const Task = ({
               color: '#000000',
               fontWeight: 'bold',
               fontFamily: 'Inter, sans-serif',
-              marginBottom: '24px',
+              marginBottom: '10px',
             }}
           >
             Wybierz poprawną odpowiedź
@@ -58,7 +58,7 @@ const Task = ({
               color: '#000000',
               fontWeight: 'bold',
               fontFamily: 'Inter, sans-serif',
-              marginBottom: '24px',
+              marginBottom: '10px',
               maxWidth: '100%',
               textAlign: 'center',
             }}
@@ -89,12 +89,13 @@ const Task = ({
                 onClick={() => onAnswerClick(choice, index)}
                 variant='outlined'
                 size='large'
+                // sx={{ marginBottom: '16px', width: '480px' }}
                 sx={{
                   borderRadius: '12px',
-                  paddingTop: '8px',
+                  paddingTop: '3px',
                   paddinLeft: '16px',
                   paggingRight: '16px',
-                  paddingBottom: '8px',
+                  paddingBottom: '3px',
                   color: answerIndex === index ? '#2B70C9' : '#4B4B4B',
                   fontSize: '20px',
                   fontFamily: 'Inter, sans-serif',

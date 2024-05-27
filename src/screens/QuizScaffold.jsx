@@ -22,7 +22,7 @@ export default function QuizScaffold({
   questions,
   banners = null,
   popups = false,
-  module
+  module,
 }) {
   let quizTime = 600
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -96,21 +96,21 @@ export default function QuizScaffold({
     setSentence([])
     console.log('answer: ', { answer })
     console.log('correctanswer: ', { correctAnswer })
-    console.log('answer lowercase: ',  answer.trim().toLowerCase() )
+    console.log('answer lowercase: ', answer.trim().toLowerCase())
     console.log('correctanswer lowercase: ', correctAnswer.trim().toLowerCase())
     setResult((prev) =>
       answer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()
         ? (setFootColor('#89E219'),
-        {
-          ...prev,
-          score: prev.score + 1,
-          correctAnswers: prev.correctAnswers + 1,
-        })
+          {
+            ...prev,
+            score: prev.score + 1,
+            correctAnswers: prev.correctAnswers + 1,
+          })
         : (setFootColor('#FF4B4B'),
-        {
-          ...prev,
-          wrongAnswers: prev.wrongAnswers + 1,
-        })
+          {
+            ...prev,
+            wrongAnswers: prev.wrongAnswers + 1,
+          })
     )
     setTimeout(() => {
       if (currentQuestion !== questions.length - 1) {
@@ -125,7 +125,6 @@ export default function QuizScaffold({
       setActionTimes((prevTimes) => [...prevTimes, actionTime])
     }, 800)
   }
-
 
   const exportResultsToFile = () => {
     const actionTimesFormatted = actionTimes.map(
@@ -163,15 +162,16 @@ export default function QuizScaffold({
         <Box
           className='top-banner'
           p={2}
-          //   bgcolor='lightblue'
+          // bgcolor='lightblue'
           sx={{
-            borderRadius: 8,
-            minHeight: '10vh',
-            maxHeight: '10vh',
+            // borderRadius: 8,
+            minHeight: '7vh',
+            maxHeight: '7vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            overflow: 'hidden', // Prevents content overflow
+            overflow: 'hidden',
+            height: '100%',
           }}
         >
           <TopBanner banners={banners.top} currentQuestion={currentQuestion} />
@@ -184,13 +184,11 @@ export default function QuizScaffold({
           p={2}
           // bgcolor='lightgreen'
           sx={{
-            borderRadius: 8,
-            // height: '100%',
             maxHeight: '76vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            overflow: 'hidden', // Prevents content overflow
+            overflow: 'hidden',
           }}
         >
           <SideBanner
@@ -211,8 +209,8 @@ export default function QuizScaffold({
             padding: '40px',
             borderRadius: '40px',
             borderColor: '#E5E5E5',
-            minHeight: '76vh',
-            maxHeight: '76vh',
+            minHeight: '75vh',
+            maxHeight: '75vh',
             // display: 'flex',
             // flexDirection: 'column',
             // alignItems: 'center',
@@ -299,7 +297,7 @@ export default function QuizScaffold({
               <Box
                 className='Body'
                 sx={{
-                  //   bgcolor: 'lightblue',
+                  // bgcolor: 'lightblue',
                   minHeight: '56vh',
                 }}
               >
@@ -379,34 +377,44 @@ export default function QuizScaffold({
               >
                 Wyniki
               </Typography>
-              <Typography sx={{
-                fontSize: "20px",
-                color: "#777777",
-                fontWeight: "normal",
-                fontFamily: "Inter, sans-serif"
-              }}>
+              <Typography
+                sx={{
+                  fontSize: '20px',
+                  color: '#777777',
+                  fontWeight: 'normal',
+                  fontFamily: 'Inter, sans-serif',
+                }}
+              >
                 Punkty: {result.score}
               </Typography>
-              <Typography sx={{
-                fontSize: "20px",
-                color: "#777777",
-                fontWeight: "normal",
-                fontFamily: "Inter, sans-serif"
-              }}>
+              <Typography
+                sx={{
+                  fontSize: '20px',
+                  color: '#777777',
+                  fontWeight: 'normal',
+                  fontFamily: 'Inter, sans-serif',
+                }}
+              >
                 Poprawne odpowiedzi: {result.correctAnswers}
-              </Typography><Typography sx={{
-                fontSize: "20px",
-                color: "#777777",
-                fontWeight: "normal",
-                fontFamily: "Inter, sans-serif"
-              }}>
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: '20px',
+                  color: '#777777',
+                  fontWeight: 'normal',
+                  fontFamily: 'Inter, sans-serif',
+                }}
+              >
                 Błędne odpowiedzi: {result.wrongAnswers}
-              </Typography><Typography sx={{
-                fontSize: "20px",
-                color: "#777777",
-                fontWeight: "normal",
-                fontFamily: "Inter, sans-serif"
-              }}>
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: '20px',
+                  color: '#777777',
+                  fontWeight: 'normal',
+                  fontFamily: 'Inter, sans-serif',
+                }}
+              >
                 Całkowity czas: {elapsedTime} s
               </Typography>
               <Link to='/'>
@@ -454,9 +462,9 @@ export default function QuizScaffold({
       <Grid item xs={3} sm={2} md={2}>
         <Box
           p={2}
-          //   bgcolor='lightyellow'
+          // bgcolor='lightyellow'
           sx={{
-            borderRadius: 8,
+            // borderRadius: 8,
             maxHeight: '76vh',
             display: 'flex',
             alignItems: 'center',

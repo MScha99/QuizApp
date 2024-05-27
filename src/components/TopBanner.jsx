@@ -8,12 +8,17 @@ export default function TopBanner({ banners, currentQuestion }) {
   }
 
   return (
-    <div className='TopBanner-container'>
+    <div >
       <img
         src={banners[currentQuestion % banners.length]}
         alt='Ad Banner'
-        className='banner-image'
-        style={{ width: 'auto', height: 'auto', display: 'block' }} 
+       
+        // style={{ width: 'auto', height: 'auto', display: 'block' }} 
+        style={{
+          width: '100%',
+          // height: '100%',
+          // objectFit: 'contain',
+        }}
       />
     </div>
   );
