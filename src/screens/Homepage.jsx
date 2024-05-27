@@ -127,7 +127,34 @@ const Homepage = () => {
           </Button>
         </Link>
 
-        <TutorialDialog />
+        <Link to='/tutorial'>
+          <Button
+            variant='outlined'
+            sx={{
+              borderRadius: '12px',
+              paddingTop: '8px',
+              paddinLeft: '16px',
+              paggingRight: '16px',
+              paddingBottom: '8px',
+              marginBottom: '8px',
+              fontSize: '20px',
+              fontFamily: 'Inter, sans-serif',
+              color: '#4B4B4B',
+              textTransform: 'none',
+              boxShadow: 'none',
+              borderWidth: 2,
+              width: '20vw',
+              borderColor: '#E5E5E5',
+              ':hover': {
+                borderWidth: 2,
+                borderColor: '#1CB0F6',
+                backgroundColor: '#E3F5FE',
+              },
+            }}
+          >
+            Instrukcja
+          </Button>
+        </Link>
 
         <Link to='/quizone'>
           <Button

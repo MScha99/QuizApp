@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { quizQuestions } from './constants'
 import { banners } from './constants'
 import Homepage from './screens/Homepage.jsx'
+import Tutorial from './screens/Tutorial.jsx'
 import QuizScaffold from './screens/QuizScaffold.jsx'
 import Relaxation from './screens/Relaxation.jsx'
 
@@ -11,6 +12,11 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Homepage />,
+    
+  },
+  {
+    path: '/tutorial',
+    element: <Tutorial />,
     
   },
   {
