@@ -38,11 +38,24 @@ export default function QuizScaffold({
   const [displayPopup, setDisplayPopup] = useState(false)
   const [startTime, setStartTime] = useState(null) // Track start time of quiz
   const [actionTimes, setActionTimes] = useState([]) // Track proceeding to next task
+  const [quizData, setQuizData] = useState([]); // Store the quiz data
 
   useEffect(() => {
     // Record the start time when QuizScaffold is invoked
-    setStartTime(new Date())
-  }, [])
+    const startTime = new Date();
+    setStartTime(startTime);
+
+    const initialTimestamp = Math.floor(startTime.getTime() / 1000); // Unix timestamp in seconds
+    setQuizData([
+      {
+        timestamp: initialTimestamp,
+        score: 0,
+        correctSum: 0,
+        wrongSum: 0,
+        answer: 0,
+      },
+    ]);
+  }, []);
 
   const onAnswerClick = (answer, index = null) => {
     switch (type) {
@@ -101,17 +114,38 @@ export default function QuizScaffold({
     setResult((prev) =>
       answer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()
         ? (setFootColor('#89E219'),
-          {
-            ...prev,
-            score: prev.score + 1,
-            correctAnswers: prev.correctAnswers + 1,
-          })
+        {
+          ...prev,
+          score: prev.score + 1,
+          correctAnswers: prev.correctAnswers + 1,
+        })
         : (setFootColor('#FF4B4B'),
-          {
-            ...prev,
-            wrongAnswers: prev.wrongAnswers + 1,
-          })
+        {
+          ...prev,
+          wrongAnswers: prev.wrongAnswers + 1,
+        })
     )
+
+    const isCorrect = answer.trim().toLowerCase() === correctAnswer.trim().toLowerCase();
+    const timestamp = Math.floor(new Date().getTime() / 1000); // Unix timestamp in seconds
+
+    // Determine new score and sums based on the previous data
+    const previousData = quizData.length ? quizData[quizData.length - 1] : { score: 0, correctSum: 0, wrongSum: 0 };
+    const newScore = previousData.score + (isCorrect ? 1 : -1);
+    const newCorrectSum = previousData.correctSum + (isCorrect ? 1 : 0);
+    const newWrongSum = previousData.wrongSum + (isCorrect ? 0 : 1);
+
+    setQuizData((prevData) => [
+      ...prevData,
+      {
+        timestamp,
+        score: newScore,
+        correctSum: newCorrectSum,
+        wrongSum: newWrongSum,
+        answer: isCorrect ? 1 : -1,
+      },
+    ]);
+
     setTimeout(() => {
       if (currentQuestion !== questions.length - 1) {
         setCurrentQuestion((prev) => prev + 1)
@@ -127,33 +161,28 @@ export default function QuizScaffold({
   }
 
   const exportResultsToFile = () => {
-    const actionTimesFormatted = actionTimes.map(
-      (time, index) =>
-        `Następne pytanie ${index + 1}: ${time.toLocaleTimeString()}`
-    )
-
-    const resultsText = `
-      Wyniki
-      
-      Poprawne odpowiedzi: ${result.correctAnswers}
-      Błędne odpowiedzi: ${result.wrongAnswers}
-      Upłynięty czas: ${elapsedTime} 
-      Czas rozpoczęcia modułu: ${startTime}
-      ${actionTimesFormatted.join('\n')}
-      Czas eksportu: ${Date().toLocaleString()}
-    `
-
-    const blob = new Blob([resultsText], { type: 'text/plain' })
-    const url = URL.createObjectURL(blob)
-
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'wyniki.txt'
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    URL.revokeObjectURL(url)
-  }
+    const headers = "timestamp,score,correctSum,wrongSum,answer";
+    const resultsText = quizData.map(data =>
+      `${data.timestamp},${data.score},${data.correctSum},${data.wrongSum},${data.answer}`
+    ).join('\n');
+  
+    const csvContent = `${headers}\n${resultsText}`;
+  
+    const now = new Date();
+    const formattedDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}-${String(now.getHours()).padStart(2, '0')}-${String(now.getMinutes()).padStart(2, '0')}-${String(now.getSeconds()).padStart(2, '0')}`;
+    const fileName = `${formattedDate}-results.csv`;
+  
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+  
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
 
   return (
     <Grid container spacing={2} columns={{ xs: 12, sm: 12, md: 12 }}>
