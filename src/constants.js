@@ -4183,7 +4183,7 @@ export const banners = {
     popup: [
       'media/Popup/biedronka.gif',
       'media/Popup/galaxy_z_flip.gif',
-      'media/Popup/kaufland_grill.gif',
+      'media/Popup/kaufland_gril.gif',
       'media/Popup/kebab_rollo_zabka.gif',
       'media/Popup/lidl_najtanszy.gif',
       'media/Popup/lidl_zakupy.gif',
