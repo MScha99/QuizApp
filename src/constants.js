@@ -1287,7 +1287,7 @@ export const quizQuestions = {
 
     {
       type: 'create-sentence',
-      question: 'Jakim krajem jest Estonia',
+      question: 'Jakim krajem jest Estonia?',
       choices: [
         'Tervetuloa',
         'Minulla',
@@ -1301,7 +1301,7 @@ export const quizQuestions = {
         'han',
         'hän',
       ],
-      correctAnswer: 'Millainen maa Viro on?',
+      correctAnswer: 'Millainen maa Viro on',
     },
 
     {
@@ -1694,7 +1694,7 @@ export const quizQuestions = {
 
     {
       type: 'create-sentence',
-      question: 'Jakim krajem jest Estonia',
+      question: 'Jakim krajem jest Estonia?',
       choices: [
         'Tervetuloa',
         'Minulla',
@@ -1708,7 +1708,7 @@ export const quizQuestions = {
         'han',
         'hän',
       ],
-      correctAnswer: 'Millainen maa Viro on?',
+      correctAnswer: 'Millainen maa Viro on',
     },
 
     {
@@ -1906,7 +1906,7 @@ export const quizQuestions = {
 
     {
       type: 'create-sentence',
-      question: 'Jakim krajem jest Estonia',
+      question: 'Jakim krajem jest Estonia?',
       choices: [
         'Tervetuloa',
         'Minulla',
@@ -1920,7 +1920,7 @@ export const quizQuestions = {
         'han',
         'hän',
       ],
-      correctAnswer: 'Millainen maa Viro on?',
+      correctAnswer: 'Millainen maa Viro on',
     },
 
     {
