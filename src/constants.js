@@ -104,15 +104,15 @@ export const quizQuestions = {
         'ona',
         'pije',
         'Witam',
-        'powodzenia',
+        'gratulacje',
         'i',
       ],
-      correctAnswer: 'Na zdrowie i powodzenia',
+      correctAnswer: 'Na zdrowie i gratulacje',
     },
 
     {
       type: 'create-sentence',
-      question: 'Na zdrowie i powodzenia!',
+      question: 'Na zdrowie i gratulacje!',
       choices: [
         'ja',
         'Kippis',
@@ -419,10 +419,10 @@ export const quizQuestions = {
         'ona',
         'pije',
         'Witam',
-        'powodzenia',
+        'gratulacje',
         'i',
       ],
-      correctAnswer: 'Na zdrowie i powodzenia',
+      correctAnswer: 'Na zdrowie i gratulacje',
     },
 
     {
@@ -591,15 +591,15 @@ export const quizQuestions = {
         'ona',
         'pije',
         'Witam',
-        'powodzenia',
+        'gratulacje',
         'i',
       ],
-      correctAnswer: 'Na zdrowie i powodzenia',
+      correctAnswer: 'Na zdrowie i gratulacje',
     },
 
     {
       type: 'create-sentence',
-      question: 'Na zdrowie i powodzenia!',
+      question: 'Na zdrowie i gratulacje!',
       choices: [
         'ja',
         'Kippis',
@@ -906,10 +906,10 @@ export const quizQuestions = {
         'ona',
         'pije',
         'Witam',
-        'powodzenia',
+        'gratulacje',
         'i',
       ],
-      correctAnswer: 'Na zdrowie i powodzenia',
+      correctAnswer: 'Na zdrowie i gratulacje',
     },
 
     {
